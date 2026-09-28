@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Henkel GLISS · Intelligence Report · Acumulado · 4 al 27 Sep 2026</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root {
+    --p-navy: #241c1c; --p-deep: #a30000; --p-blue: #E1000F; --p-sky: #ff5c5c; --p-aqua: #ff4b4b; --p-mint: #ffdede;
+    --p-fresh: #fff0f0; --p-white: #ffffff; --p-gray: #8a7a7b; --p-gray2: #cdc0c1;
+    --p-border: #ecd8d8; --p-line: #f1e8e8; --p-soft: #f6f5f5; --p-green: #0e7a5f; --p-orange: #a86a1a;
+    --p-red: #7a2020; --p-gold: #a37b3a; --p-plum: #6b4e88; --p-graddark: #7a0000;
+}
+* { box-sizing: border-box; }
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--p-soft); color: var(--p-navy); margin: 0; padding: 0; overflow-x: hidden; letter-spacing: -0.005em; }
+
+.hero { height: 480px; background: radial-gradient(circle at 80% 15%, rgba(255,255,255,0.14), transparent 55%), linear-gradient(140deg, var(--p-aqua) 0%, var(--p-blue) 55%, var(--p-graddark) 100%); display: flex; align-items: center; justify-content: center; text-align: center; color: white; position: relative; }
+.hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px; background: linear-gradient(90deg, var(--p-graddark), var(--p-blue), var(--p-sky)); }
+.hero::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 120px; background: linear-gradient(180deg, transparent, var(--p-soft)); }
+.hero-topbar { position: absolute; top: 30px; left: 50px; right: 50px; display: flex; justify-content: space-between; align-items: center; font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: rgba(255, 255, 255, 0.72); font-weight: 600; z-index: 3; }
+.hero-topbar .brand-mark { display: inline-flex; align-items: center; gap: 12px; }
+.hero-topbar .brand-mark .mk { width: 32px; height: 32px; border: 1.5px solid rgba(255, 255, 255, 0.85); display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 0.85rem; }
+.hero-topbar .meta { display: flex; gap: 40px; }
+.hero-topbar .meta div span:first-child { color: rgba(255, 255, 255, 0.55); margin-right: 8px; }
+.hero-content { position: relative; z-index: 2; padding: 0 40px; max-width: 1080px; }
+.hero .brand-line { font-size: 0.75rem; letter-spacing: 8px; text-transform: uppercase; color: var(--p-fresh); font-weight: 700; margin-bottom: 22px; }
+.hero h1 { font-size: 4.6rem; font-weight: 900; margin: 0; letter-spacing: -3px; line-height: 1; text-shadow: 0 4px 30px rgba(0, 0, 0, 0.30); }
+.hero h1 .lit { font-weight: 300; color: rgba(255, 255, 255, 0.85); }
+.hero h1 .accent { background: linear-gradient(90deg, #ffffff, var(--p-mint)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.hero .subtitle { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 9px; margin-top: 30px; font-weight: 600; color: var(--p-fresh); }
+.hero .hero-facts { display: flex; gap: 60px; justify-content: center; margin-top: 45px; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.18); max-width: 720px; margin-left: auto; margin-right: auto; }
+.hero .hero-facts div .n { font-size: 1.9rem; font-weight: 800; color: white; line-height: 1; letter-spacing: -1px; }
+.hero .hero-facts div .l { font-size: 0.66rem; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255, 255, 255, 0.72); margin-top: 8px; font-weight: 600; }
+
+.container { max-width: 1360px; margin: -80px auto 0; padding: 0 20px; position: relative; z-index: 3; }
+
+.exec-summary { background: var(--p-white); padding: 55px; border-radius: 4px; box-shadow: 0 25px 55px -10px rgba(26, 18, 16, 0.14); margin-bottom: 45px; border: 1px solid var(--p-border); position: relative; overflow: hidden; }
+.exec-summary::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--p-graddark), var(--p-blue), var(--p-sky)); }
+.exec-head { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--p-line); padding-bottom: 24px; margin-bottom: 40px; }
+.exec-head .kicker { font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: var(--p-gray); font-weight: 700; }
+.exec-head h2 { font-size: 1.6rem; margin: 0; font-weight: 800; letter-spacing: -1px; color: var(--p-navy); }
+.exec-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 36px 50px; }
+.exec-item { display: flex; gap: 20px; }
+.exec-item .ico { width: 42px; height: 42px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: #fdeceb; color: var(--p-blue); border-radius: 4px; font-size: 1rem; }
+.exec-item h4 { margin: 0 0 8px; color: var(--p-navy); text-transform: uppercase; font-size: 0.72rem; font-weight: 800; letter-spacing: 1.5px; }
+.exec-item p { margin: 0; font-size: 0.9rem; line-height: 1.65; color: var(--p-gray); }
+.exec-item p strong { color: var(--p-navy); font-weight: 700; }
+
+.spotlight { background: linear-gradient(140deg, var(--p-aqua) 0%, var(--p-blue) 55%, var(--p-graddark) 100%); color: white; border-radius: 4px; padding: 40px 50px; margin-bottom: 45px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 30px; box-shadow: 0 20px 45px rgba(122, 0, 0, 0.25); position: relative; overflow: hidden; }
+.spotlight::after { content: ''; position: absolute; top: -120px; right: -120px; width: 320px; height: 320px; background: radial-gradient(circle, rgba(255, 255, 255, 0.16), transparent 70%); border-radius: 50%; }
+.sp-stat { text-align: left; border-right: 1px solid rgba(255, 255, 255, 0.14); padding-right: 20px; position: relative; z-index: 1; }
+.sp-stat:last-child { border-right: none; }
+.sp-stat .sp-lbl { font-size: 0.62rem; letter-spacing: 2.5px; text-transform: uppercase; color: var(--p-fresh); font-weight: 700; margin-bottom: 14px; opacity: 0.9; }
+.sp-stat h2 { font-size: 2.5rem; font-weight: 800; margin: 0; color: white; letter-spacing: -1.5px; line-height: 1; }
+.sp-stat h2 small { font-size: 1rem; font-weight: 600; color: rgba(255, 255, 255, 0.6); margin-left: 4px; }
+.sp-stat .sp-sub { font-size: 0.75rem; color: rgba(255, 255, 255, 0.62); margin-top: 12px; line-height: 1.5; font-weight: 500; }
+
+.section-hero { display: flex; align-items: baseline; gap: 22px; margin: 65px 0 6px; }
+.section-hero .num { font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: var(--p-gray); font-weight: 800; padding: 6px 12px; border: 1px solid var(--p-border); border-radius: 2px; }
+.section-title { font-size: 2.1rem; font-weight: 800; text-align: left; color: var(--p-navy); margin: 0; letter-spacing: -1.2px; line-height: 1.1; }
+.section-title em { font-style: normal; color: var(--p-blue); font-weight: 800; }
+.section-sub { color: var(--p-gray); font-size: 0.94rem; margin: 14px 0 32px; max-width: 880px; line-height: 1.65; }
+.subsection-title { font-size: 1.2rem; font-weight: 800; color: var(--p-navy); margin: 38px 0 10px; letter-spacing: -0.4px; }
+
+.kpi-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 26px; }
+.kpi-card { background: var(--p-white); padding: 26px 24px; border-radius: 4px; border: 1px solid var(--p-border); transition: 0.2s; position: relative; }
+.kpi-card:hover { border-color: var(--p-blue); transform: translateY(-3px); box-shadow: 0 15px 30px rgba(26, 18, 16, 0.08); }
+.kpi-card::before { content: ''; position: absolute; top: 0; left: 0; height: 2px; width: 40px; background: var(--p-blue); }
+.kpi-card .k-ico { width: 32px; height: 32px; margin-bottom: 18px; display: flex; align-items: center; justify-content: center; color: var(--p-blue); font-size: 1rem; }
+.kpi-card .k-lbl { font-size: 0.66rem; font-weight: 800; color: var(--p-gray); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; }
+.kpi-card h3 { font-size: 2.3rem; margin: 0; color: var(--p-navy); font-weight: 800; letter-spacing: -1.5px; line-height: 1; }
+.kpi-card h3 small { font-size: 1rem; font-weight: 500; color: var(--p-gray); margin-left: 3px; }
+.kpi-card .k-note { font-size: 0.77rem; color: var(--p-gray); margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--p-line); line-height: 1.55; }
+.kpi-card.pos::before, .kpi-card.pos h3, .kpi-card.pos .k-ico { color: var(--p-green); }
+.kpi-card.pos::before { background: var(--p-green); }
+.kpi-card.warn::before, .kpi-card.warn h3, .kpi-card.warn .k-ico { color: var(--p-orange); }
+.kpi-card.warn::before { background: var(--p-orange); }
+.kpi-card.neg::before, .kpi-card.neg h3, .kpi-card.neg .k-ico { color: var(--p-red); }
+.kpi-card.neg::before { background: var(--p-red); }
+
+.func-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; margin-bottom: 26px; }
+.func-block { background: var(--p-white); border: 1px solid var(--p-border); border-radius: 4px; padding: 30px; border-top: 3px solid var(--p-blue); }
+.func-block.impulso { border-top-color: var(--p-orange); }
+.func-block .func-head { display: flex; align-items: center; gap: 12px; margin-bottom: 22px; }
+.func-block .func-ico { width: 36px; height: 36px; border-radius: 4px; background: #fdeceb; color: var(--p-blue); display: flex; align-items: center; justify-content: center; font-size: 1rem; }
+.func-block.impulso .func-ico { color: var(--p-orange); background: #f7edd6; }
+.func-block h3 { margin: 0; font-size: 1.15rem; color: var(--p-navy); font-weight: 800; letter-spacing: -0.4px; }
+.func-block .func-sub { font-size: 0.62rem; letter-spacing: 2px; text-transform: uppercase; color: var(--p-gray); font-weight: 700; margin-top: 2px; }
+.func-row { display: flex; justify-content: space-between; align-items: baseline; padding: 13px 0; border-bottom: 1px solid var(--p-line); }
+.func-row:last-child { border-bottom: none; padding-bottom: 0; }
+.func-row .fr-lbl { font-size: 0.86rem; color: var(--p-gray); font-weight: 500; }
+.func-row .fr-lbl small { display: block; font-size: 0.71rem; color: var(--p-gray2); margin-top: 2px; }
+.func-row .fr-val { font-size: 1.1rem; font-weight: 800; color: var(--p-navy); font-variant-numeric: tabular-nums; }
+.func-note { margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--p-line); font-size: 0.81rem; color: var(--p-gray); line-height: 1.6; }
+.func-note strong { color: var(--p-navy); }
+
+.chart-box { background: var(--p-white); padding: 34px; border-radius: 4px; border: 1px solid var(--p-border); width: 100%; margin-bottom: 26px; }
+.chart-box .cb-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; }
+.chart-box h3 { margin: 0; font-size: 1.1rem; color: var(--p-navy); font-weight: 800; letter-spacing: -0.5px; }
+.chart-box .cb-tag { font-size: 0.62rem; letter-spacing: 2.5px; text-transform: uppercase; color: var(--p-gray); font-weight: 700; }
+.chart-box .cb-sub { font-size: 0.84rem; color: var(--p-gray); margin: 0 0 24px; line-height: 1.6; max-width: 780px; }
+.chart-container { height: 320px; width: 100%; position: relative; }
+.chart-container-sm { height: 260px; width: 100%; position: relative; }
+.chart-split { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; margin-bottom: 26px; }
+
+.table-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; margin-bottom: 30px; }
+.table-container { background: white; padding: 30px; border-radius: 4px; border: 1px solid var(--p-border); }
+.table-container.full { grid-column: 1 / -1; }
+.table-container h3 { margin: 0 0 4px; font-size: 1.02rem; color: var(--p-navy); font-weight: 800; letter-spacing: -0.3px; }
+.table-container .tbl-sub { margin: 0 0 18px; font-size: 0.8rem; color: var(--p-gray); line-height: 1.5; }
+.table-data { width: 100%; border-collapse: collapse; }
+.table-data th { text-align: left; padding: 11px 8px 11px 0; color: var(--p-gray); border-bottom: 1px solid var(--p-navy); font-size: 0.63rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 800; }
+.table-data td { padding: 12px 8px 12px 0; border-bottom: 1px solid var(--p-line); font-size: 0.85rem; font-weight: 500; color: var(--p-navy); }
+.table-data tr:last-child td { border-bottom: none; border-top: 1px solid var(--p-navy); font-weight: 800; padding-top: 15px; color: var(--p-blue); }
+.table-data .num { text-align: right; font-variant-numeric: tabular-nums; font-weight: 700; }
+.table-data.no-total tr:last-child td { border-top: none; border-bottom: 1px solid var(--p-line); font-weight: 500; color: var(--p-navy); padding-top: 12px; }
+.table-scroll { max-height: 420px; overflow-y: auto; }
+.pill { display: inline-block; padding: 3px 10px; font-size: 0.63rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; border-radius: 2px; border: 1px solid; }
+.pill.neutral { background: var(--p-soft); color: var(--p-gray); border-color: var(--p-border); }
+.pill.accent { background: #fdeceb; color: var(--p-blue); border-color: #f6c9c5; }
+.pill.pos { background: #e0efe9; color: var(--p-green); border-color: #b8dbcc; }
+.pill.warn { background: #f7edd6; color: var(--p-orange); border-color: #e2c896; }
+.pill.neg { background: #f0dcdc; color: var(--p-red); border-color: #d9b6b6; }
+
+.strategy-box { background: linear-gradient(140deg, var(--p-aqua) 0%, var(--p-blue) 55%, var(--p-graddark) 100%); color: white; padding: 55px; border-radius: 4px; margin-bottom: 55px; position: relative; overflow: hidden; }
+.strategy-box::before { content: ''; position: absolute; top: -80px; right: -80px; width: 340px; height: 340px; background: radial-gradient(circle, rgba(255, 255, 255, 0.14), transparent 70%); border-radius: 50%; }
+.strategy-box .kick { font-size: 0.7rem; letter-spacing: 3.5px; text-transform: uppercase; color: var(--p-fresh); font-weight: 700; margin-bottom: 16px; position: relative; }
+.strategy-box h3 { font-size: 1.75rem; margin: 0 0 12px; color: white; font-weight: 800; letter-spacing: -1px; position: relative; }
+.strategy-box .sub { color: rgba(255, 255, 255, 0.75); margin: 0 0 36px; font-size: 0.96rem; max-width: 720px; line-height: 1.65; position: relative; }
+.strat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px; position: relative; }
+.strat-item { padding: 22px 24px; border-left: 2px solid var(--p-fresh); background: rgba(255, 255, 255, 0.02); }
+.strat-item h6 { color: var(--p-fresh); font-size: 0.66rem; margin: 0 0 10px; text-transform: uppercase; font-weight: 800; letter-spacing: 2px; display: flex; align-items: center; gap: 10px; }
+.strat-item h6 .st-ico { width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; color: var(--p-fresh); font-size: 0.82rem; }
+.strat-item p { font-size: 0.86rem; opacity: 0.9; line-height: 1.6; margin: 0; color: rgba(255, 255, 255, 0.85); }
+
+.voz-wrap { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-bottom: 30px; }
+.voz-card { border: 1px solid #ece2e2; border-left: 3px solid var(--p-blue, #E1000F); border-radius: 4px; padding: 24px 26px; background: #fff; }
+.voz-card .vz-tag { font-size: 0.62rem; letter-spacing: 2.2px; text-transform: uppercase; font-weight: 800; color: #a37b3a; margin-bottom: 10px; }
+.voz-card h4 { margin: 0 0 10px; font-size: 1.02rem; font-weight: 800; letter-spacing: -0.4px; color: #241c1c; }
+.voz-card p { margin: 0; font-size: 0.88rem; line-height: 1.7; color: #5c5050; }
+.voz-card p + p { margin-top: 10px; }
+@media (max-width: 900px) { .voz-wrap { grid-template-columns: 1fr; } }
+.foot { background: linear-gradient(140deg, var(--p-graddark), var(--p-blue) 60%, var(--p-aqua)); color: white; padding: 80px 0 40px; margin-top: 65px; width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; }
+.foot-in { max-width: 1300px; margin: 0 auto; padding: 0 40px; }
+.foot-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 60px; padding-bottom: 50px; border-bottom: 1px solid rgba(255, 255, 255, 0.15); }
+.foot-brand { font-size: 2.9rem; font-weight: 900; letter-spacing: -1.5px; line-height: 1; margin: 0 0 14px; }
+.foot-brand .accent { background: linear-gradient(90deg, #ffffff, var(--p-mint)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.foot-brand-sub { font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: rgba(255, 255, 255, 0.55); font-weight: 600; }
+.foot-col h6 { font-size: 0.66rem; letter-spacing: 2.5px; text-transform: uppercase; color: var(--p-fresh); font-weight: 800; margin: 0 0 16px; }
+.foot-col p { font-size: 0.86rem; line-height: 1.65; color: rgba(255, 255, 255, 0.72); margin: 0 0 8px; }
+.foot-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 24px; font-size: 0.67rem; letter-spacing: 2px; text-transform: uppercase; color: rgba(255, 255, 255, 0.42); font-weight: 600; }
+
+.carousel { max-width: 780px; margin: 0 auto 26px; }
+.car-row { display: flex; align-items: center; justify-content: center; height: 440px; }
+.car-side { width: 110px; height: 84%; flex-shrink: 0; border-radius: 4px; overflow: hidden; filter: blur(4px); opacity: 0.5; transform: scale(0.94); cursor: pointer; transition: filter .3s ease, opacity .3s ease, transform .3s ease; background: var(--p-navy); }
+.car-side:hover { opacity: 0.75; }
+.car-side img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.car-side.left { mask-image: linear-gradient(to left, rgba(0,0,0,1) 30%, rgba(0,0,0,0)); -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 30%, rgba(0,0,0,0)); margin-right: -18px; }
+.car-side.right { mask-image: linear-gradient(to right, rgba(0,0,0,1) 30%, rgba(0,0,0,0)); -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1) 30%, rgba(0,0,0,0)); margin-left: -18px; }
+.car-stage { position: relative; width: 340px; max-width: 56vw; height: 100%; flex-shrink: 0; background: var(--p-navy); border-radius: 4px; overflow: hidden; cursor: pointer; box-shadow: 0 15px 35px rgba(122,0,0,0.22); z-index: 2; }
+.car-stage img { width: 100%; height: 100%; object-fit: contain; display: block; transition: opacity 0.25s ease; }
+.car-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.9); color: var(--p-navy); border: none; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 2; }
+.car-nav:hover { background: #fff; }
+.car-nav.prev { left: 12px; } .car-nav.next { right: 12px; }
+.car-counter { position: absolute; bottom: 12px; right: 14px; background: rgba(36,28,28,0.6); color: #fff; font-size: 0.7rem; font-weight: 700; padding: 4px 10px; border-radius: 20px; letter-spacing: 0.5px; }
+.car-caption { text-align: center; padding: 14px 10px 2px; }
+.car-caption #carPdv { font-size: 1rem; font-weight: 800; color: var(--p-navy); }
+.car-caption #carMeta { font-size: 0.78rem; color: var(--p-gray); margin-top: 3px; }
+
+@media (max-width: 1024px) {
+    .exec-grid, .strat-grid, .chart-split, .func-wrap { grid-template-columns: 1fr; }
+    .table-wrapper, .foot-top { grid-template-columns: 1fr; }
+    .spotlight { grid-template-columns: 1fr 1fr; }
+    .sp-stat { border-right: none; border-bottom: 1px solid rgba(255, 255, 255, 0.14); padding-bottom: 20px; }
+    .kpi-row { grid-template-columns: 1fr 1fr; }
+    .hero h1 { font-size: 2.8rem; }
+    .hero-topbar { display: none; }
+}
+@media (max-width: 640px) { .car-nav { width: 36px; height: 36px; } .car-side { display: none; } .car-stage { max-width: 88vw; } }
+</style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="hero-topbar">
+        <div class="brand-mark"><div class="mk">H</div><span>Henkel GLISS · Intelligence</span></div>
+        <div class="meta">
+            <div><span>Tipo</span><b>Lanzamiento</b></div>
+            <div><span>Cobertura</span><b>Nacional</b></div>
+            <div><span>Alcance</span><b>Interno</b></div>
+        </div>
+    </div>
+    <div class="hero-content">
+        <div class="brand-line">Portafolio GLISS · Canal Moderno y Tradicional</div>
+        <h1><span class="lit">Radar</span> <span class="accent">Nacional</span></h1>
+        <p class="subtitle">Informe de Resultados · Acumulado · 4 al 27 de Septiembre 2026 <span style="opacity:.75;font-weight:600;">· corte parcial, FS4 en ejecución</span></p>
+        <div class="hero-facts">
+            <div><div class="n">179</div><div class="l">Visitas realizadas</div></div>
+            <div><div class="n">2.306</div><div class="l">Unidades vendidas</div></div>
+            <div><div class="n">61</div><div class="l">PDVs activos</div></div>
+            <div><div class="n">11</div><div class="l">Ciudades activas</div></div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+
+    <section class="exec-summary">
+        <div class="exec-head">
+            <span class="kicker">4 al 27 de septiembre 2026 · cuatro fines de semana (FS4 en ejecución)</span>
+            <h2>Los cuatro puntos del acumulado</h2>
+        </div>
+        <div class="exec-grid">
+            <div class="exec-item">
+                <div class="ico"><i class="fa-regular fa-map"></i></div>
+                <div>
+                    <h4>01 · 179 visitas ejecutadas · FS4 en curso</h4>
+                    <p>Los tres primeros fines de semana ya cerrados suman <strong>139 de 149 turnos (93.3%)</strong>. El FS4 arrancó el 25 de septiembre y va en <strong>40 visitas</strong>: viernes y sábado completos, domingo 27 en ejecución al momento de este corte. De los <strong>7 pendientes que dejó el FS3, 6 ya se repusieron</strong> en este fin de semana — el detalle está en la sección 01.</p>
+                </div>
+            </div>
+            <div class="exec-item">
+                <div class="ico"><i class="fa-solid fa-cash-register"></i></div>
+                <div>
+                    <h4>02 · 2.306 unidades vendidas en el acumulado</h4>
+                    <p><strong>97.2% de tasa de cierre</strong> (174 de 179 visitas). El FS4 ya suma <strong>628 unidades en solo dos días y medio</strong> de ruta, a un ritmo por visita similar al del FS3. <strong>2.306 unidades en total</strong>: 1.589 del canal moderno y 717 del tradicional.</p>
+                </div>
+            </div>
+            <div class="exec-item">
+                <div class="ico"><i class="fa-solid fa-tag"></i></div>
+                <div>
+                    <h4>03 · GLISS es el 78% de todo lo vendido</h4>
+                    <p><strong>GLISS acumula el 78.4%</strong> de las unidades vendidas (1.809 de 2.306). En el FS4 baja a 71.0% frente al 80.0% del FS3, porque Konzil, Igora y Persil ganan peso puntual en algunos puntos — vale la pena vigilarlo si se sostiene cuando cierre el fin de semana. El producto ancla sigue siendo el <strong>combo shampoo + acondicionador Ultimate Repair</strong>, con 281 unidades acumuladas.</p>
+                </div>
+            </div>
+            <div class="exec-item">
+                <div class="ico"><i class="fa-solid fa-gift"></i></div>
+                <div>
+                    <h4>04 · 1.029 premios redimidos en el acumulado</h4>
+                    <p>Se entregaron <strong>1.029 premios</strong> frente a <strong>2.306 unidades vendidas</strong>: 0.45 premios por cada unidad, un ritmo estable desde el FS3. El <strong>scrunchi</strong> sigue siendo el más redimido (375 uds., 36.4% del mix), pero el cepillo es la referencia que más crece en el FS4. Ver el detalle en la sección 03.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="spotlight">
+        <div class="sp-stat"><div class="sp-lbl">Cobertura FS1-FS3</div><h2>93.3<small>%</small></h2><div class="sp-sub">139 de 149 turnos · FS4 en ejecución (40 visitas más)</div></div>
+        <div class="sp-stat"><div class="sp-lbl">Tasa de cierre</div><h2>97.2<small>%</small></h2><div class="sp-sub">Sobre las 179 visitas acumuladas</div></div>
+        <div class="sp-stat"><div class="sp-lbl">Unidades vendidas</div><h2>2.306</h2><div class="sp-sub">1.589 canal moderno · 717 canal tradicional</div></div>
+        <div class="sp-stat"><div class="sp-lbl">Participación GLISS</div><h2>78.4<small>%</small></h2><div class="sp-sub">Por nombre de producto vendido</div></div>
+        <div class="sp-stat"><div class="sp-lbl">Premios redimidos</div><h2>1.029</h2><div class="sp-sub">4 referencias del kit de impulso GLISS</div></div>
+    </div>
+
+    <!-- 00 -->
+    <div class="section-hero"><div class="num">00</div><h2 class="section-title">Comparativo <em>semana a semana</em></h2></div>
+    <p class="section-sub">Cómo se comparan los cuatro fines de semana de ejecución: <strong>FS1</strong> (4 al 6 de septiembre), <strong>FS2</strong> (11 al 13, con jornada de recuperación el domingo), <strong>FS3</strong> (18 al 20) y <strong>FS4</strong> (25 al 27, <strong>en ejecución</strong> al momento de este corte: viernes y sábado completos, domingo en curso). Las cifras del FS4 son parciales y van a seguir moviéndose hasta que cierre el domingo.</p>
+
+    <div class="kpi-row">
+        <div class="kpi-card pos"><div class="k-ico"><i class="fa-solid fa-calendar-check"></i></div><div class="k-lbl">Pendientes del FS3 repuestos</div><h3>6<small> / 7</small></h3><div class="k-note">Farmatodo Titán, Jumbo Santa Ana, Droguería Salud Market Chía, Jumbo Chía, Éxito Calle 80 y Éxito Unicentro Bogotá ya se cubrieron en el FS4. <strong>Solo Jumbo Calle 80 sigue pendiente.</strong></div></div>
+        <div class="kpi-card warn"><div class="k-ico"><i class="fa-solid fa-cart-shopping"></i></div><div class="k-lbl">Unidades por visita FS4</div><h3>15.7</h3><div class="k-note">FS1: 6.5. FS2: 8.7. FS3: 20.6. FS4 (parcial, domingo en curso): 15.7. <strong>-4.9</strong> frente al FS3, aunque todavía falta cerrar el domingo.</div></div>
+        <div class="kpi-card warn"><div class="k-ico"><i class="fa-solid fa-tag"></i></div><div class="k-lbl">Participación GLISS FS4</div><h3>71.0<small>%</small></h3><div class="k-note">FS1: 91.0%. FS2: 75.4%. FS3: 80.0%. FS4: 71.0%. <strong>-9.0 pp</strong> frente al FS3 — vale la pena vigilar si se sostiene al cierre del fin de semana.</div></div>
+        <div class="kpi-card pos"><div class="k-ico"><i class="fa-solid fa-triangle-exclamation"></i></div><div class="k-lbl">Competencia activa FS4</div><h3>51.4<small>%</small></h3><div class="k-note">FS1: 83.7%. FS2: 86.8%. FS3: 79.5%. FS4: 51.4%. <strong>-28.1 pp</strong>: la caída más fuerte de todo el acumulado, aunque Jumbo Hayuelos por sí solo concentra buena parte de lo que sí se reportó.</div></div>
+    </div>
+
+    <div class="chart-split">
+        <div class="chart-box" style="margin-bottom:0;">
+            <div class="cb-head"><h3>Unidades vendidas por día: FS1 vs. FS2 vs. FS3 vs. FS4</h3><div class="cb-tag">Fig. 00a</div></div>
+            <p class="cb-sub">Solo se comparan viernes y sábado, los dos días plenos de ruta en los cuatro fines de semana. El domingo del FS2 no entra aquí por ser una jornada especial de recuperación, y el domingo del FS4 tampoco porque sigue en ejecución.</p>
+            <div class="chart-container-sm" style="height:300px;"><canvas id="chartCompVentas"></canvas></div>
+        </div>
+        <div class="chart-box" style="margin-bottom:0;">
+            <div class="cb-head"><h3>Indicadores clave: FS1 vs. FS2 vs. FS3 vs. FS4</h3><div class="cb-tag">Fig. 00b</div></div>
+            <p class="cb-sub">La participación de GLISS y la actividad de competencia bajan en el FS4 (todavía parcial); la tasa de cierre se mantiene estable en los cuatro cortes.</p>
+            <div class="chart-container-sm" style="height:300px;"><canvas id="chartCompIndicadores"></canvas></div>
+        </div>
+    </div>
+
+    <div class="table-container full" style="margin-bottom:26px;">
+        <h3>Comparativo completo</h3>
+        <p class="tbl-sub">Los cuatro fines de semana de ejecución, uno al lado del otro. El <strong>FS4 está marcado como parcial</strong>: viernes y sábado completos, domingo en curso al momento de este corte. La columna de variación compara el FS4 contra el FS3 solo en las tasas que no se distorsionan por el corte a mitad de domingo; los totales de volumen del FS4 se marcan "en curso" porque todavía van a crecer.</p>
+        <div class="table-scroll">
+        <table class="table-data no-total">
+            <tr><th>Indicador</th><th class="num">FS1 · 4-6 sep</th><th class="num">FS2 · 11-13 sep</th><th class="num">FS3 · 18-20 sep</th><th class="num">FS4 · 25-27 sep <small>(parcial)</small></th><th>FS4 vs. FS3</th></tr>
+            <tr><td>Cobertura / cumplimiento</td><td class="num">94.4%</td><td class="num">100%</td><td class="num">87.5%</td><td class="num">—</td><td><span class="pill neutral">En curso</span></td></tr>
+            <tr><td>Visitas realizadas</td><td class="num">51</td><td class="num">39</td><td class="num">49</td><td class="num">40</td><td><span class="pill neutral">En curso</span></td></tr>
+            <tr><td>Turnos no ejecutados en el fin de semana <small>en el FS1 se recuperaron o reemplazaron después; en el FS3, 6 de 7 ya se repusieron en el FS4</small></td><td class="num">3</td><td class="num">0</td><td class="num">7</td><td class="num">—</td><td><span class="pill neutral">En curso</span></td></tr>
+            <tr><td>PDVs activos</td><td class="num">43</td><td class="num">32</td><td class="num">38</td><td class="num">36</td><td><span class="pill neutral">En curso</span></td></tr>
+            <tr><td>Ciudades activas</td><td class="num">9</td><td class="num">10</td><td class="num">11</td><td class="num">10</td><td><span class="pill neutral">En curso</span></td></tr>
+            <tr><td>Tasa de cierre</td><td class="num">98.0%</td><td class="num">97.4%</td><td class="num">98.0%</td><td class="num">95.0%</td><td><span class="pill neg">-3.0 pp</span></td></tr>
+            <tr><td>Unidades vendidas</td><td class="num">332</td><td class="num">338</td><td class="num">1.008</td><td class="num">628</td><td><span class="pill neutral">En curso</span></td></tr>
+            <tr><td>Unidades por visita</td><td class="num">6.5</td><td class="num">8.7</td><td class="num">20.6</td><td class="num">15.7</td><td><span class="pill neg">-4.9</span></td></tr>
+            <tr><td>Participación GLISS</td><td class="num">91.0%</td><td class="num">75.4%</td><td class="num">80.0%</td><td class="num">71.0%</td><td><span class="pill neg">-9.0 pp</span></td></tr>
+            <tr><td>Premios redimidos</td><td class="num">195</td><td class="num">125</td><td class="num">431</td><td class="num">278</td><td><span class="pill neutral">En curso</span></td></tr>
+            <tr><td>Premios por unidad vendida</td><td class="num">0.59</td><td class="num">0.37</td><td class="num">0.43</td><td class="num">0.44</td><td><span class="pill pos">+0.01</span></td></tr>
+            <tr><td>Consumidores encuestados</td><td class="num">277</td><td class="num">220</td><td class="num">258</td><td class="num">197</td><td><span class="pill neutral">En curso</span></td></tr>
+            <tr><td>Opinión promedio del consumidor</td><td class="num">3.88 / 5</td><td class="num">3.95 / 5</td><td class="num">3.81 / 5</td><td class="num">3.99 / 5</td><td><span class="pill pos">+0.18</span></td></tr>
+            <tr><td>Visitas con competencia activa</td><td class="num">83.7%</td><td class="num">86.8%</td><td class="num">79.5%</td><td class="num">51.4%</td><td><span class="pill neutral">-28.1 pp</span></td></tr>
+            <tr><td>Evidencias de competencia</td><td class="num">87</td><td class="num">85</td><td class="num">85</td><td class="num">76</td><td><span class="pill neutral">En curso</span></td></tr>
+        </table>
+        </div>
+    </div>
+
+    <p class="section-sub" style="margin-top:-10px;"><i class="fa-solid fa-circle-info" style="color:var(--p-blue);margin-right:6px;"></i>Lectura combinada: el FS4 recupera terreno en cobertura — <strong>6 de los 7 pendientes del FS3 ya se repusieron</strong> — y en opinión del consumidor (3.99/5, la mejor de las cuatro rutas), pero cede en participación GLISS (71.0%) y en unidades por visita (15.7) frente al pico del FS3. Es un fin de semana con <strong>rotación de equipo notablemente más alta que las anteriores</strong> (7 gestoras nuevas en el aplicativo) — ver el detalle en la sección 01 — y todavía le falta el domingo completo, así que estas cifras van a moverse antes del cierre.</p>
+
+    <!-- 01 -->
+    <div class="section-hero"><div class="num">01</div><h2 class="section-title">Eficacia de ruta por <em>canal</em></h2></div>
+    <p class="section-sub">Acumulado de los cuatro fines de semana de ejecución: 4, 5, 6, 11, 12, 13, 18, 19, 20, 25, 26 y 27 de septiembre (el FS4 sigue en curso). <strong>Todos los indicadores de esta sección se calculan sobre los PDVs y las ciudades activas de las cuatro rutas</strong> — 179 visitas en 61 puntos de venta de 11 ciudades — no sobre el total de la ruta del mes. La ruta la ejecutan <strong>18 gestoras: 3 en el canal tradicional y 15 en el canal moderno.</strong> Esa estructura de 18 puestos no cambia: cuando hay rotación de personal, el puesto sigue siendo el mismo y por eso en el aplicativo aparecen más nombres que puestos — y el FS4 es, con diferencia, el fin de semana con más rotación de todo el acumulado.</p>
+
+    <div class="kpi-row">
+        <div class="kpi-card warn"><div class="k-ico"><i class="fa-solid fa-bullseye"></i></div><div class="k-lbl">Cobertura FS1-FS3</div><h3>93.3<small>%</small></h3><div class="k-note">139 visitas realizadas sobre 149 turnos programados. El FS4 va en 40 visitas, todavía en ejecución.</div></div>
+        <div class="kpi-card pos"><div class="k-ico"><i class="fa-regular fa-map"></i></div><div class="k-lbl">PDVs activos</div><h3>61</h3><div class="k-note">43 del canal moderno y 18 del tradicional, con actividad registrada en al menos un fin de semana. El FS4 sumó 6 puntos nuevos — y por fin cubrió Droguería Las Villas de Colombia, el único punto que llevaba tres fines de semana sin una sola visita.</div></div>
+        <div class="kpi-card"><div class="k-ico"><i class="fa-solid fa-city"></i></div><div class="k-lbl">Ciudades activas</div><h3>11</h3><div class="k-note">Bogotá, Medellín, Cali, Bucaramanga, Barranquilla, Manizales, Chía, Ibagué, Palmira, Dosquebradas y Jamundí. Sin ciudades nuevas en el FS4.</div></div>
+        <div class="kpi-card"><div class="k-ico"><i class="fa-solid fa-users"></i></div><div class="k-lbl">Gestoras en ruta</div><h3>18</h3><div class="k-note">3 en el canal tradicional y 15 en el canal moderno. Estructura fija en las cuatro rutas; el FS4 trae la mayor rotación de personal del acumulado (7 nombres nuevos).</div></div>
+    </div>
+
+    <div class="chart-box">
+        <div class="cb-head"><h3>Visitas realizadas por día</h3><div class="cb-tag">Fig. 01</div></div>
+        <p class="cb-sub">179 visitas en los doce días de las cuatro rutas. El domingo 13 (7 visitas) fue la jornada especial que compensó los puntos sin actividad del FS2. El FS4 arrancó con 18 y 17 visitas en viernes y sábado, y el domingo 27 sigue en curso (5 visitas al momento de este corte).</p>
+        <div class="chart-container"><canvas id="chartCadencia"></canvas></div>
+    </div>
+
+    <div class="subsection-title">Qué pasó en cada canal</div>
+    <p class="section-sub" style="margin-top:0;">Los dos canales trabajan con estructura, cadenas y ciudades distintas. Leerlos por separado es la única forma de comparar peras con peras.</p>
+    <div class="func-wrap">
+        <div class="func-block impulso">
+            <div class="func-head"><div class="func-ico"><i class="fa-solid fa-store"></i></div><div><h3>Canal Tradicional</h3><div class="func-sub">3 gestoras · Ibagué, Manizales/Dosquebradas y Cali/Palmira/Jamundí</div></div></div>
+            <div class="func-row"><span class="fr-lbl">Gestoras en ruta</span><span class="fr-val">3</span></div>
+            <div class="func-row"><span class="fr-lbl">PDVs activos <small>Cañaveral, Mercaldas, Mercacentro, Surtiplaza, Mercamas, La Montaña, Surtifamiliar y Caribe</small></span><span class="fr-val">16</span></div>
+            <div class="func-row"><span class="fr-lbl">Visitas realizadas</span><span class="fr-val">31</span></div>
+            <div class="func-row"><span class="fr-lbl">Unidades vendidas</span><span class="fr-val">717</span></div>
+            <div class="func-row"><span class="fr-lbl">Unidades por visita</span><span class="fr-val">23.1</span></div>
+            <div class="func-note">Los 3 puestos del tradicional <strong>siguen sin un solo faltante</strong> en las cuatro rutas y son, con diferencia, los que más venden por visita: <strong>23.1 unidades</strong> frente a 10.7 del moderno. Es también el canal más estable en personal: las mismas gestoras de siempre, con un único relevo ya asentado en Ibagué. En el FS4 abrió Caribe S.A. Terranova en Jamundí, con muy buen arranque.</div>
+        </div>
+        <div class="func-block">
+            <div class="func-head"><div class="func-ico"><i class="fa-solid fa-cart-shopping"></i></div><div><h3>Canal Moderno</h3><div class="func-sub">15 gestoras · Bogotá, Medellín, Cali, Bucaramanga, Barranquilla y Chía</div></div></div>
+            <div class="func-row"><span class="fr-lbl">Gestoras en ruta</span><span class="fr-val">15</span></div>
+            <div class="func-row"><span class="fr-lbl">PDVs activos <small>Éxito, Jumbo, Farmatodo, Euro y droguerías</small></span><span class="fr-val">39</span></div>
+            <div class="func-row"><span class="fr-lbl">Visitas realizadas</span><span class="fr-val">148</span></div>
+            <div class="func-row"><span class="fr-lbl">Unidades vendidas</span><span class="fr-val">1.589</span></div>
+            <div class="func-row"><span class="fr-lbl">Unidades por visita</span><span class="fr-val">10.7</span></div>
+            <div class="func-note">El moderno mueve el <strong>69% de las unidades</strong> (1.589 de 2.306) con 15 puestos y 43 puntos de venta. Es también el canal donde se concentra <strong>toda la rotación de personal</strong> del FS4 (7 gestoras nuevas) y donde estaban los faltantes: en este corte se resolvieron 6 de los 7 pendientes del FS3, y <strong>Droguería Las Villas de Colombia recibió su primera visita en toda la campaña</strong>, después de tres fines de semana sin cobertura.</div>
+        </div>
+    </div>
+
+    <div class="chart-box">
+        <div class="cb-head"><h3>Cobertura por canal: a tiempo vs. recuperada</h3><div class="cb-tag">Fig. 02</div></div>
+        <p class="cb-sub">Cifras de los tres fines de semana ya cerrados (FS1-FS3). En el canal moderno se planificaron 124 turnos: 107 se cumplieron con el cronograma, 7 se compensaron en otro día (domingo 13 del FS2) y 10 quedaron sin cubrir (3 del FS1 y 7 del FS3, de los cuales 6 ya se repusieron en el FS4). En el canal tradicional se planificaron 25 turnos y los 25 se cumplieron con el cronograma. El FS4 todavía está en ejecución y no entra en este conteo.</p>
+        <div class="chart-container"><canvas id="chartCobDiaCanal"></canvas></div>
+    </div>
+
+    <div class="chart-split">
+        <div class="chart-box" style="margin-bottom:0;">
+            <div class="cb-head"><h3>Visitas realizadas por ciudad</h3><div class="cb-tag">Fig. 03</div></div>
+            <p class="cb-sub">Bogotá y Medellín concentran el 61% de las visitas acumuladas de las cuatro rutas.</p>
+            <div class="chart-container-sm" style="height:300px;"><canvas id="chartCobCiudad"></canvas></div>
+        </div>
+        <div class="chart-box" style="margin-bottom:0;">
+            <div class="cb-head"><h3>Visitas realizadas por cadena activa</h3><div class="cb-tag">Fig. 04</div></div>
+            <p class="cb-sub">Éxito y Jumbo concentran el grueso de las visitas del canal moderno: 118 de las 179 acumuladas.</p>
+            <div class="chart-container-sm" style="height:300px;"><canvas id="chartCobCadena"></canvas></div>
+        </div>
+    </div>
+
+    <div class="subsection-title">Seguimiento de los pendientes del FS3</div>
+    <p class="section-sub" style="margin-top:0;">Los <strong>7 turnos del tercer fin de semana que quedaron sin cubrir</strong> ya tuvieron su primera oportunidad de reposición en el FS4. <strong>6 de los 7 se repusieron</strong>; solo Jumbo Calle 80 sigue sin turno de reposición.</p>
+    <div class="table-container full" style="margin-bottom:26px;">
+        <table class="table-data no-total">
+            <tr><th>#</th><th>Punto de venta / turno</th><th>Cadena</th><th>Ciudad</th><th>Día pendiente (FS3)</th><th>Estado</th></tr>
+            <tr><td>1</td><td>Droguería Salud Market Chía</td><td>Droguerías</td><td>Chía</td><td>Sábado 19</td><td><span class="pill pos">Repuesto · Vie 25</span></td></tr>
+            <tr><td>2</td><td>Jumbo Calle 80</td><td>Jumbo</td><td>Bogotá</td><td>Sábado 19</td><td><span class="pill neg">Sigue pendiente</span></td></tr>
+            <tr><td>3</td><td>Farmatodo Titán</td><td>Farmatodo</td><td>Bogotá</td><td>Viernes 18</td><td><span class="pill pos">Repuesto · Dom 27</span></td></tr>
+            <tr><td>4</td><td>Jumbo Santa Ana</td><td>Jumbo</td><td>Bogotá</td><td>Viernes 18</td><td><span class="pill pos">Repuesto · Vie 25</span></td></tr>
+            <tr><td>5</td><td>1 turno en Chía</td><td>Jumbo / Droguerías</td><td>Chía</td><td>Viernes 18</td><td><span class="pill pos">Repuesto · Dom 27</span></td></tr>
+            <tr><td>6</td><td>1 turno en Éxito Calle 80</td><td>Éxito</td><td>Bogotá</td><td>Domingo 20</td><td><span class="pill pos">Repuesto · Dom 27</span></td></tr>
+            <tr><td>7</td><td>1 turno en Éxito Unicentro</td><td>Éxito</td><td>Bogotá</td><td>Domingo 20</td><td><span class="pill pos">Repuesto · Dom 27</span></td></tr>
+        </table>
+        <p class="tbl-sub" style="margin-top:12px;">Balance: <strong>6 de 7 repuestos (85.7%)</strong> ya en el primer fin de semana disponible. Jumbo Calle 80 lleva dos fines de semana seguidos sin turno de reposición y conviene priorizarlo para el próximo corte.</p>
+    </div>
+
+    <div class="table-container full" style="margin-bottom:26px;">
+        <h3>Histórico de incidencias de cobertura</h3>
+        <p class="tbl-sub">Los puntos de las cuatro rutas que en algún momento quedaron sin actividad en su día programado. Droguería Las Villas de Colombia recibió su primera visita en el FS4, después de tres fines de semana sin cobertura; de los 7 faltantes del FS3, 6 ya se repusieron y solo Jumbo Calle 80 sigue pendiente.</p>
+        <table class="table-data no-total">
+            <tr><th>Punto de venta</th><th>Cadena</th><th>Ciudad</th><th>Fin de semana</th><th>Estado</th><th>Causa registrada</th></tr>
+            <tr><td>Farmatodo Titán</td><td>Farmatodo</td><td>Bogotá</td><td>FS1 · Vie 04</td><td><span class="pill warn">Reemplazado</span></td><td>Farmatodo Titán fue reemplazado por otro punto el domingo, el día en que se recuperaron los faltantes del fin de semana.</td></tr>
+            <tr><td>Droguería Las Villas de Colombia</td><td>Droguerías</td><td>Bogotá</td><td>FS1 · Sáb 05</td><td><span class="pill pos">Resuelto · FS4</span></td><td>El punto no había permitido generar el ingreso en el aplicativo por permisos internos desde el FS1. Recibió su primera visita el sábado 26 de septiembre, en el FS4.</td></tr>
+            <tr><td>Éxito Villa Mayor Wow</td><td>Éxito</td><td>Bogotá</td><td>FS1 · Dom 06</td><td><span class="pill warn">Compensado</span></td><td>Sin registro en el FS1; se recuperó en el FS2 (sáb 12 y dom 13).</td></tr>
+            <tr><td>Éxito Colina</td><td>Éxito</td><td>Bogotá</td><td>FS1 · Vie 04</td><td><span class="pill warn">Compensado</span></td><td>Se recuperó el domingo 6, dentro del mismo fin de semana.</td></tr>
+            <tr><td>Jumbo Hayuelos</td><td>Jumbo</td><td>Bogotá</td><td>FS2 · Vie/Sáb</td><td><span class="pill warn">Compensado</span></td><td>Se recuperó el domingo 13, dentro del mismo fin de semana.</td></tr>
+            <tr><td>Éxito Villa Mayor Wow</td><td>Éxito</td><td>Bogotá</td><td>FS2 · Vie 11</td><td><span class="pill warn">Compensado</span></td><td>Se recuperó el domingo 13, dentro del mismo fin de semana.</td></tr>
+            <tr><td>Éxito Country</td><td>Éxito</td><td>Bogotá</td><td>FS2 · Vie 11</td><td><span class="pill warn">Compensado</span></td><td>Se recuperó el domingo 13, dentro del mismo fin de semana.</td></tr>
+            <tr><td>Éxito Unicentro Bogotá</td><td>Éxito</td><td>Bogotá</td><td>FS2 · Vie/Sáb</td><td><span class="pill warn">Compensado</span></td><td>Se recuperó el domingo 13, dentro del mismo fin de semana.</td></tr>
+            <tr><td>Éxito Chapinero</td><td>Éxito</td><td>Bogotá</td><td>FS2 · Vie/Sáb</td><td><span class="pill warn">Compensado</span></td><td>Se recuperó el domingo 13, dentro del mismo fin de semana.</td></tr>
+            <tr><td>Éxito Laureles Wow</td><td>Éxito</td><td>Medellín</td><td>FS2 · Sáb 12</td><td><span class="pill warn">Compensado</span></td><td>Se recuperó el domingo 13, dentro del mismo fin de semana.</td></tr>
+            <tr><td>Éxito Envigado Wow</td><td>Éxito</td><td>Medellín</td><td>FS2 · Sáb 12</td><td><span class="pill warn">Compensado</span></td><td>Se recuperó el domingo 13, dentro del mismo fin de semana.</td></tr>
+            <tr><td>Farmatodo Titán</td><td>Farmatodo</td><td>Bogotá</td><td>FS3 · Vie 18</td><td><span class="pill pos">Resuelto · FS4</span></td><td>Sin registro en el FS3 (segunda vez que este punto queda sin actividad). Se cubrió el domingo 27, en el FS4.</td></tr>
+            <tr><td>Jumbo Santa Ana</td><td>Jumbo</td><td>Bogotá</td><td>FS3 · Vie 18</td><td><span class="pill pos">Resuelto · FS4</span></td><td>El turno del viernes había quedado pendiente por reponer. Se cubrió el viernes 25, en el FS4.</td></tr>
+            <tr><td>1 turno en Chía</td><td>Jumbo / Droguerías</td><td>Chía</td><td>FS3 · Vie 18</td><td><span class="pill pos">Resuelto · FS4</span></td><td>Chía solo había registrado actividad el domingo 20 en todo el FS3. En el FS4 se cubrieron tanto Droguería Salud Market Chía (viernes 25) como Jumbo Chía (domingo 27).</td></tr>
+            <tr><td>Droguería Salud Market Chía</td><td>Droguerías</td><td>Chía</td><td>FS3 · Sáb 19</td><td><span class="pill pos">Resuelto · FS4</span></td><td>Sin actividad en todo el FS3. Se cubrió el viernes 25, en el FS4.</td></tr>
+            <tr><td>Jumbo Calle 80</td><td>Jumbo</td><td>Bogotá</td><td>FS3 · Sáb 19</td><td><span class="pill neg">Pendiente</span></td><td>El turno del sábado había quedado pendiente por reponer en el FS3. Tampoco tuvo actividad en el FS4: dos fines de semana seguidos sin ese turno cubierto.</td></tr>
+            <tr><td>Éxito Calle 80</td><td>Éxito</td><td>Bogotá</td><td>FS3 · Dom 20</td><td><span class="pill pos">Resuelto · FS4</span></td><td>Sin actividad en todo el FS3 (último registro del domingo 6). Se cubrió el domingo 27, en el FS4.</td></tr>
+            <tr><td>Éxito Unicentro Bogotá</td><td>Éxito</td><td>Bogotá</td><td>FS3 · Dom 20</td><td><span class="pill pos">Resuelto · FS4</span></td><td>Sin actividad en todo el FS3 (último registro del domingo 13). Se cubrió el domingo 27, en el FS4.</td></tr>
+        </table>
+    </div>
+
+    <div class="subsection-title">Detalle por asesora</div>
+    <p class="section-sub" style="margin-top:0;">La ruta la ejecutan <strong>18 gestoras</strong> (3 del tradicional y 15 del moderno) y esa estructura no cambia. En el aplicativo aparecen más nombres porque algunos puestos rotaron de persona entre los cuatro fines de semana — el FS4 es el que más rotación trae, con 7 nombres nuevos —; la tabla lista a todas las que registraron actividad, pero <strong>los puestos de ruta siguen siendo 18</strong>.</p>
+    <div class="table-container full" style="margin-bottom:26px;">
+        <div class="table-scroll">
+        <table class="table-data">
+            <tr><th>Gestora</th><th>Ciudad</th><th>Canal</th><th class="num">Visitas</th><th class="num">PDVs distintos</th><th class="num">Unidades</th><th>Puntos de venta</th></tr>
+            <tr><td>Natali Johanna Paz David</td><td>Medellín</td><td><span class="pill accent">Moderno</span></td><td class="num">11</td><td class="num">3</td><td class="num">202</td><td>Euro Salomón, Éxito Envigado Wow, Farmatodo Santa Fe</td></tr>
+            <tr><td>Rosa Cilena Colorado</td><td>Cali / Palmira / Jamundí</td><td><span class="pill warn">Tradicional</span></td><td class="num">10</td><td class="num">7</td><td class="num">195</td><td>Cañaveral La Primera, Cañaveral Palmitex, Cañaveral Pance, Caribe Principal Jamundí, Caribe S.A. Terranova, La Montaña Pasoancho, Surtifamiliar Alameda</td></tr>
+            <tr><td>Sara Flórez Vélez</td><td>Dosquebradas / Manizales</td><td><span class="pill warn">Tradicional</span></td><td class="num">10</td><td class="num">5</td><td class="num">153</td><td>Mercaldas Centro, Mercaldas Palermo, Mercaldas Parque Caldas, Mercaldas Versalles, Mercamas Dosquebradas</td></tr>
+            <tr><td>Mariana Rivera Román</td><td>Bucaramanga</td><td><span class="pill accent">Moderno</span></td><td class="num">10</td><td class="num">2</td><td class="num">121</td><td>Éxito Bucaramanga, Éxito Oriental Bucaramanga CV</td></tr>
+            <tr><td>Luna Macías Macías</td><td>Medellín</td><td><span class="pill accent">Moderno</span></td><td class="num">9</td><td class="num">5</td><td class="num">126</td><td>Euro Salomón, Éxito Colombia, Éxito Laureles Wow, Éxito San Antonio, Farmatodo Vegas</td></tr>
+            <tr><td>Karen Julieth Alba Barrera</td><td>Bogotá</td><td><span class="pill accent">Moderno</span></td><td class="num">9</td><td class="num">6</td><td class="num">95</td><td>Éxito Colina, Farmatodo Hayuelos, Jumbo Calle 170, Jumbo Hayuelos, Jumbo Santa Ana, Jumbo Santafé</td></tr>
+            <tr><td>Laura Camila González Madroñero</td><td>Cali</td><td><span class="pill accent">Moderno</span></td><td class="num">8</td><td class="num">3</td><td class="num">93</td><td>Éxito La Flora, Éxito San Fernando, Jumbo Valle de Lili</td></tr>
+            <tr><td>Jenny Paola Soto Alcalá</td><td>Ibagué</td><td><span class="pill warn">Tradicional</span></td><td class="num">7</td><td class="num">6</td><td class="num">170</td><td>Mercacentro No. 4, Mercacentro No. 8, Mercacentro No. 9, Mercacentro No. 10, Surtiplaza Aqua, Surtiplaza Salado</td></tr>
+            <tr><td>Nicol Valeria Aponte Salas</td><td>Bogotá</td><td><span class="pill accent">Moderno</span></td><td class="num">7</td><td class="num">6</td><td class="num">109</td><td>Éxito Country, Éxito Unicentro Bogotá, Farmatodo Centro Mayor, Jumbo Calle 170, Jumbo Santafé, Jumbo Soacha</td></tr>
+            <tr><td>Sara Valero</td><td>Bogotá</td><td><span class="pill accent">Moderno</span></td><td class="num">7</td><td class="num">7</td><td class="num">70</td><td>Éxito Calle 80, Éxito Country, Jumbo Calle 170, Jumbo Calle 80, Jumbo Carrera 30, Jumbo Hayuelos, Jumbo Santafé</td></tr>
+            <tr><td>Jazleidy Tatiana Garzón Castañeda</td><td>Bogotá / Chía</td><td><span class="pill accent">Moderno</span></td><td class="num">7</td><td class="num">6</td><td class="num">67</td><td>Éxito Unicentro Bogotá, Farmatodo CC Unicentro, Jumbo Calle 80, Jumbo Chía, Jumbo Santa Ana, Jumbo Suba</td></tr>
+            <tr><td>Marlen Julieth Rojas Rojas</td><td>Medellín</td><td><span class="pill accent">Moderno</span></td><td class="num">7</td><td class="num">3</td><td class="num">66</td><td>Éxito Bello, Éxito Laureles Wow, Éxito Poblado</td></tr>
+            <tr><td>Leidy Daniela Austillo</td><td>Bogotá</td><td><span class="pill accent">Moderno</span></td><td class="num">6</td><td class="num">6</td><td class="num">42</td><td>Éxito Calle 80, Éxito Chapinero, Farmatodo Galerías, Farmatodo Titán, Jumbo Santafé, Jumbo Suba</td></tr>
+            <tr><td>Yudi Katerine Chávez Yocuro</td><td>Bogotá</td><td><span class="pill accent">Moderno</span></td><td class="num">6</td><td class="num">5</td><td class="num">27</td><td>Éxito Colina, Éxito Villa Mayor Wow, Farmatodo CC Unicentro, Jumbo Santa Ana, Jumbo Suba</td></tr>
+            <tr><td>Karen Lizeth Murillo Pinzón</td><td>Chía</td><td><span class="pill accent">Moderno</span></td><td class="num">6</td><td class="num">2</td><td class="num">26</td><td>Droguería Salud Market Chía, Jumbo Chía</td></tr>
+            <tr><td>Yulianis Villadiego Vargas</td><td>Medellín</td><td><span class="pill accent">Moderno</span></td><td class="num">5</td><td class="num">3</td><td class="num">102</td><td>Éxito Colombia, Éxito Poblado, Éxito San Antonio</td></tr>
+            <tr><td>Yicel Mariana Grisales</td><td>Medellín</td><td><span class="pill accent">Moderno</span></td><td class="num">5</td><td class="num">1</td><td class="num">60</td><td>Éxito Laureles Wow</td></tr>
+            <tr><td>Valentina Salamanca Guerrero</td><td>Bogotá</td><td><span class="pill accent">Moderno</span></td><td class="num">5</td><td class="num">3</td><td class="num">39</td><td>Éxito Colina, Farmatodo Hayuelos, Jumbo Hayuelos</td></tr>
+            <tr><td>Marisol Rodríguez Hernández</td><td>Ibagué</td><td><span class="pill warn">Tradicional</span></td><td class="num">4</td><td class="num">3</td><td class="num">199</td><td>Mercacentro No. 10, Surtiplaza Aqua, Surtiplaza Salado</td></tr>
+            <tr><td>María Villalba</td><td>Barranquilla</td><td><span class="pill accent">Moderno</span></td><td class="num">4</td><td class="num">3</td><td class="num">85</td><td>Éxito Barranquilla, Farmatodo Viva Barranquilla, Jumbo Americano</td></tr>
+            <tr><td>Lina Gisel Andrade</td><td>Bogotá</td><td><span class="pill accent">Moderno</span></td><td class="num">4</td><td class="num">4</td><td class="num">27</td><td>Jumbo Calle 80, Jumbo Hayuelos, Jumbo Soacha, Jumbo Suba</td></tr>
+            <tr><td>Angie Lorena Pardo Hernández</td><td>Barranquilla</td><td><span class="pill accent">Moderno</span></td><td class="num">4</td><td class="num">2</td><td class="num">19</td><td>Éxito Barranquilla, Farmatodo Viva Barranquilla</td></tr>
+            <tr><td>Lina Marcela Sánchez Carvajal</td><td>Medellín</td><td><span class="pill accent">Moderno</span></td><td class="num">4</td><td class="num">4</td><td class="num">14</td><td>Euro Frontera, Euro Sabaneta, Éxito Bello, Éxito Poblado</td></tr>
+            <tr><td>Verónica Paulina Cárdenas Fonseca</td><td>Bogotá</td><td><span class="pill accent">Moderno</span></td><td class="num">3</td><td class="num">3</td><td class="num">35</td><td>Éxito Villa Mayor Wow, Farmatodo CC Unicentro, Farmatodo Centro Mayor</td></tr>
+            <tr><td>Ingrith Sofía Granados Sánchez</td><td>Bogotá</td><td><span class="pill accent">Moderno</span></td><td class="num">3</td><td class="num">3</td><td class="num">24</td><td>Éxito Villa Mayor Wow, Jumbo Carrera 30, Jumbo Suba</td></tr>
+            <tr><td>Yenny Vanesa Inchima Lame</td><td>Bogotá</td><td><span class="pill accent">Moderno</span></td><td class="num">3</td><td class="num">3</td><td class="num">24</td><td>Droguería Las Villas de Colombia, Farmatodo Titán, Los Andes Droguerías Casa Blanca</td></tr>
+            <tr><td>Estella Vanesa Zemanate</td><td>Cali</td><td><span class="pill accent">Moderno</span></td><td class="num">2</td><td class="num">2</td><td class="num">30</td><td>Éxito La Flora, Jumbo Valle de Lili</td></tr>
+            <tr><td>Verónica Salgado Jaramillo</td><td>Medellín</td><td><span class="pill accent">Moderno</span></td><td class="num">2</td><td class="num">2</td><td class="num">25</td><td>Euro Florida, Éxito San Antonio</td></tr>
+            <tr><td>Kelly Valentina Giraldo Molina</td><td>Bogotá</td><td><span class="pill accent">Moderno</span></td><td class="num">2</td><td class="num">1</td><td class="num">23</td><td>Éxito Country</td></tr>
+            <tr><td>Daniela Andrea Calvo Corena</td><td>Barranquilla</td><td><span class="pill accent">Moderno</span></td><td class="num">2</td><td class="num">2</td><td class="num">10</td><td>Farmatodo Viva Barranquilla, Jumbo Americano</td></tr>
+            <tr><td>Cristal Daza</td><td>Bogotá</td><td><span class="pill accent">Moderno</span></td><td class="num">2</td><td class="num">2</td><td class="num">9</td><td>Farmatodo Galerías, Jumbo Soacha</td></tr>
+            <tr><td>Danna Valentina Pantoja Buitrago</td><td>Bogotá</td><td><span class="pill accent">Moderno</span></td><td class="num">2</td><td class="num">2</td><td class="num">1</td><td>Éxito Villa Mayor Wow, Farmatodo Centro Mayor</td></tr>
+            <tr><td>Laura Valentina Camacho</td><td>Chía</td><td><span class="pill accent">Moderno</span></td><td class="num">1</td><td class="num">1</td><td class="num">10</td><td>Droguería Salud Market Chía</td></tr>
+            <tr><td>Stefany Bernal</td><td>Bogotá</td><td><span class="pill accent">Moderno</span></td><td class="num">1</td><td class="num">1</td><td class="num">7</td><td>Éxito Unicentro Bogotá</td></tr>
+            <tr><td>Leidy Alejandra Tuta Arteaga</td><td>Bogotá</td><td><span class="pill accent">Moderno</span></td><td class="num">1</td><td class="num">1</td><td class="num">1</td><td>Éxito Chapinero</td></tr>
+            <tr><td>Total · 18 puestos de ruta</td><td>11 ciudades</td><td></td><td class="num">179</td><td class="num">61</td><td class="num">2.306</td><td>61 PDVs activos en la ruta acumulada</td></tr>
+        </table>
+        </div>
+    </div>
+
+    <div class="subsection-title">Condiciones puntuales del punto de venta</div>
+    <p class="section-sub" style="margin-top:0;">Situaciones puntuales reportadas en campo que explican por qué algunos puntos no tuvieron el mismo desempeño — no dependen de la ejecución de la visita.</p>
+    <div class="table-container full" style="margin-bottom:26px;">
+        <table class="table-data no-total">
+            <tr><th>Punto de venta</th><th>Ciudad</th><th>Nota</th></tr>
+            <tr><td>Droguería Las Villas de Colombia</td><td>Bogotá</td><td>El punto no había permitido generar el ingreso en el aplicativo desde el sábado 5 por permisos internos. <strong>Recibió su primera visita el sábado 26, en el FS4</strong>, después de tres fines de semana sin cobertura.</td></tr>
+            <tr><td>Jumbo Chía</td><td>Chía</td><td>Sin venta el sábado 12 por un paro que afectó el flujo de clientes en el centro comercial. Es el único registro sin venta del FS2; en el FS1 el mismo punto reportó falta de inventario GLISS.</td></tr>
+            <tr><td>Éxito Laureles Wow</td><td>Medellín</td><td>La línea Ultimate Repair está agotada "hasta nuevo aviso" desde el domingo 13; solo queda inventario de Full Hair Wonder.</td></tr>
+            <tr><td>Euro Salomón y Euro Frontera</td><td>Medellín</td><td>Sin inventario de producto GLISS disponible en el punto durante el FS1.</td></tr>
+            <tr><td>Mercaldas Versalles</td><td>Manizales</td><td>Muy bajo flujo de clientes y el administrador no permitió usar carrito para dar más visibilidad a los obsequios (FS2).</td></tr>
+            <tr><td>Éxito Colombia, Éxito Barranquilla y Éxito Chapinero</td><td>Medellín / Barranquilla / Bogotá</td><td>Patrón repetido en varios puntos del FS2: clientes que no regresaron a redimir su premio por no querer mostrar la factura de compra.</td></tr>
+            <tr><td>Farmatodo Centro Mayor</td><td>Bogotá</td><td>FS3: se vendió prácticamente todo el inventario disponible del punto. Se solicita surtido con anticipación para no frenar la venta en el siguiente fin de semana.</td></tr>
+            <tr><td>Éxito Colina</td><td>Bogotá</td><td>FS3: falta de obsequios en el punto durante la jornada del viernes.</td></tr>
+            <tr><td>Farmatodo Santa Fe</td><td>Medellín</td><td>FS3: alta demanda de muestras por parte del consumidor; el punto no contaba con material de degustación.</td></tr>
+            <tr><td>Farmatodo Las Vegas</td><td>Medellín</td><td>FS3: buen flujo de personas, pero mayoritariamente domiciliarios, que no se traducen en abordaje ni en venta asistida.</td></tr>
+            <tr><td>Farmatodo Hayuelos</td><td>Bogotá</td><td>FS3: se reporta una situación de relacionamiento con la administración del punto — trato hacia la gestora y restricción del uso del celular, que es la herramienta con la que se registra la visita. Requiere gestión comercial con la cadena para no afectar la operación ni el clima del equipo.</td></tr>
+            <tr><td>Surtiplaza Salado</td><td>Ibagué</td><td>FS3: el punto pide que se avise con anticipación la llegada de nuevo pedido para poder planear la exhibición y el impulso.</td></tr>
+            <tr><td>Euro Salomón</td><td>Medellín</td><td>FS3: la visita del viernes quedó registrada sin el módulo de ventas, por lo que es el único registro del fin de semana sin cierre reportado.</td></tr>
+            <tr><td>Jumbo Santa Ana</td><td>Bogotá</td><td>FS4: alta presencia de Head &amp; Shoulders por el lanzamiento de un producto nuevo, con amplia publicidad e impulsadora propia dentro del centro comercial y el punto. Flujo de clientes bajo pese al abordaje activo del equipo.</td></tr>
+            <tr><td>Éxito Laureles Wow</td><td>Medellín</td><td>FS4: el punto sigue reportando que "quedan muy pocos productos" — el mismo agotamiento de inventario que ya se había señalado en el FS2, ahora en su segundo corte consecutivo.</td></tr>
+            <tr><td>Jumbo Suba</td><td>Bogotá</td><td>FS4: punto solo, con muy bajo flujo de clientes durante toda la jornada del sábado.</td></tr>
+            <tr><td>Surtiplaza Aqua</td><td>Ibagué</td><td>FS4: poco movimiento de clientes reportado el viernes.</td></tr>
+            <tr><td>Jumbo Valle de Lili</td><td>Cali</td><td>FS4: lluvia fuerte en la tarde del viernes redujo el flujo; varios clientes con marca ya definida no aceptaron muestra.</td></tr>
+            <tr><td>Éxito Unicentro Bogotá</td><td>Bogotá</td><td>FS4: hubo ventas, pero los clientes no regresaron por los obsequios — mismo patrón de no reclamar premio que ya se había visto en varios puntos del FS2.</td></tr>
+            <tr><td>Jumbo Chía</td><td>Chía</td><td>FS4: baja afluencia durante buena parte de la jornada del domingo, pero con abordaje continuo se cerraron 4 ventas.</td></tr>
+        </table>
+    </div>
+
+    <!-- 02 -->
+    <div class="section-hero"><div class="num">02</div><h2 class="section-title">Ejecución de <em>venta (sell-out)</em></h2></div>
+
+    <div class="func-wrap" style="grid-template-columns:1fr;">
+        <div class="func-block">
+            <div class="func-head"><div class="func-ico"><i class="fa-solid fa-cash-register"></i></div><div><h3>Cierre y volumen</h3><div class="func-sub">Sobre las 179 visitas acumuladas</div></div></div>
+            <div class="func-row"><span class="fr-lbl">Tasa de cierre</span><span class="fr-val">97.2%</span></div>
+            <div class="func-row"><span class="fr-lbl">Unidades vendidas</span><span class="fr-val">2.306</span></div>
+            <div class="func-row"><span class="fr-lbl">Unidades por visita</span><span class="fr-val">12.9</span></div>
+            <div class="func-row"><span class="fr-lbl">Producto ancla <small>combo shampoo + acondicionador Ultimate Repair</small></span><span class="fr-val">281 uds.</span></div>
+            <div class="func-note">Los sábados son sistemáticamente el día fuerte: 131, 174, 445 y 291 unidades. El <strong>sábado 19 sigue siendo el pico de toda la campaña</strong>, pero el viernes y el sábado del FS4 (291 y 291 uds.) ya superan a cualquier día completo del FS1 o el FS2. La productividad por visita del FS4 (15.7 uds., parcial) queda por debajo del FS3 (20.6) pero sigue muy por encima del FS1-FS2.</div>
+        </div>
+    </div>
+
+    <div class="chart-box">
+        <div class="cb-head"><h3>Unidades vendidas por día</h3><div class="cb-tag">Fig. 05</div></div>
+        <p class="cb-sub">Los doce días de las cuatro rutas. El FS3 sigue con el pico absoluto (sábado 19), pero el FS4 arranca fuerte: viernes 25 y sábado 26 están prácticamente empatados en 291 unidades cada uno. El domingo 27 todavía está en curso.</p>
+        <div class="chart-container"><canvas id="chartUnidadesDia"></canvas></div>
+    </div>
+
+    <div class="chart-box">
+        <div class="cb-head"><h3>Marca vendida</h3><div class="cb-tag">Fig. 06</div></div>
+        <p class="cb-sub">GLISS es la gran mayoría de la venta acumulada: 1.809 de las 2.306 unidades. El resto es portafolio complementario que la gestora cierra en el mismo punto — en el FS4, Konzil, Igora y Persil ganan algo más de peso que en los cortes anteriores.</p>
+        <div class="chart-container-sm"><canvas id="chartMarcaReal"></canvas></div>
+    </div>
+
+    <div class="chart-box">
+        <div class="cb-head"><h3>Top 10 productos vendidos</h3><div class="cb-tag">Fig. 07</div></div>
+        <p class="cb-sub">El shampoo + acondicionador Ultimate Repair (combo) sigue liderando con holgura. Toda la parte alta del ranking sigue siendo línea Ultimate Repair y Oil Nutritive.</p>
+        <div class="chart-container" style="height:380px;"><canvas id="chartTopProductos"></canvas></div>
+    </div>
+
+    <div class="subsection-title">Ventas por canal</div>
+    <p class="section-sub" style="margin-top:0;">El moderno pone el volumen; el tradicional pone la productividad por visita.</p>
+    <div class="table-container full" style="margin-bottom:26px;">
+        <table class="table-data">
+            <tr><th>Canal</th><th class="num">PDVs</th><th class="num">Visitas</th><th class="num">Unidades</th><th class="num">Uds. / visita</th><th class="num">% del total</th></tr>
+            <tr><td>Moderno <small>Éxito, Jumbo, Farmatodo, Euro, droguerías</small></td><td class="num">43</td><td class="num">148</td><td class="num">1.589</td><td class="num">10.7</td><td class="num">68.9%</td></tr>
+            <tr><td>Tradicional <small>Cañaveral, Mercaldas, Mercacentro, Surtiplaza, Mercamas, La Montaña, Surtifamiliar, Caribe</small></td><td class="num">18</td><td class="num">31</td><td class="num">717</td><td class="num">23.1</td><td class="num">31.1%</td></tr>
+            <tr><td>Total</td><td class="num">61</td><td class="num">179</td><td class="num">2.306</td><td class="num">12.9</td><td class="num">100%</td></tr>
+        </table>
+    </div>
+
+    <div class="subsection-title">Ventas por ciudad y por cadena</div>
+    <div class="table-wrapper">
+        <div class="table-container">
+            <h3>Por ciudad</h3>
+            <p class="tbl-sub">Visitas y unidades vendidas en el acumulado de las cuatro rutas.</p>
+            <table class="table-data">
+                <tr><th>Ciudad</th><th class="num">Visitas</th><th class="num">Unidades</th><th class="num">Uds. / visita</th></tr>
+                <tr><td>Medellín</td><td class="num">43</td><td class="num">595</td><td class="num">13.8</td></tr>
+                <tr><td>Bogotá</td><td class="num">67</td><td class="num">593</td><td class="num">8.9</td></tr>
+                <tr><td>Ibagué</td><td class="num">11</td><td class="num">369</td><td class="num">33.5</td></tr>
+                <tr><td>Cali</td><td class="num">14</td><td class="num">199</td><td class="num">14.2</td></tr>
+                <tr><td>Bucaramanga</td><td class="num">10</td><td class="num">121</td><td class="num">12.1</td></tr>
+                <tr><td>Barranquilla</td><td class="num">10</td><td class="num">114</td><td class="num">11.4</td></tr>
+                <tr><td>Dosquebradas</td><td class="num">2</td><td class="num">86</td><td class="num">43.0</td></tr>
+                <tr><td>Manizales</td><td class="num">8</td><td class="num">67</td><td class="num">8.4</td></tr>
+                <tr><td>Palmira</td><td class="num">4</td><td class="num">67</td><td class="num">16.8</td></tr>
+                <tr><td>Jamundí</td><td class="num">2</td><td class="num">52</td><td class="num">26.0</td></tr>
+                <tr><td>Chía</td><td class="num">8</td><td class="num">43</td><td class="num">5.4</td></tr>
+                <tr><td>Total</td><td class="num">179</td><td class="num">2.306</td><td class="num">12.9</td></tr>
+            </table>
+        </div>
+        <div class="table-container">
+            <h3>Por cadena</h3>
+            <p class="tbl-sub">Visitas y unidades vendidas en el acumulado de las cuatro rutas.</p>
+            <table class="table-data">
+                <tr><th>Cadena</th><th>Canal</th><th class="num">Visitas</th><th class="num">Unidades</th></tr>
+                <tr><td>Éxito</td><td><span class="pill accent">Moderno</span></td><td class="num">75</td><td class="num">926</td></tr>
+                <tr><td>Jumbo</td><td><span class="pill accent">Moderno</span></td><td class="num">43</td><td class="num">454</td></tr>
+                <tr><td>Mercacentro</td><td><span class="pill warn">Tradicional</span></td><td class="num">6</td><td class="num">223</td></tr>
+                <tr><td>Farmatodo</td><td><span class="pill accent">Moderno</span></td><td class="num">20</td><td class="num">161</td></tr>
+                <tr><td>Surtiplaza</td><td><span class="pill warn">Tradicional</span></td><td class="num">5</td><td class="num">146</td></tr>
+                <tr><td>Cañaveral</td><td><span class="pill warn">Tradicional</span></td><td class="num">6</td><td class="num">87</td></tr>
+                <tr><td>Mercamas</td><td><span class="pill warn">Tradicional</span></td><td class="num">2</td><td class="num">86</td></tr>
+                <tr><td>Mercaldas</td><td><span class="pill warn">Tradicional</span></td><td class="num">8</td><td class="num">67</td></tr>
+                <tr><td>Caribe</td><td><span class="pill warn">Tradicional</span></td><td class="num">2</td><td class="num">52</td></tr>
+                <tr><td>Surtifamiliar</td><td><span class="pill warn">Tradicional</span></td><td class="num">1</td><td class="num">35</td></tr>
+                <tr><td>Droguerías</td><td><span class="pill accent">Moderno</span></td><td class="num">5</td><td class="num">34</td></tr>
+                <tr><td>La Montaña</td><td><span class="pill warn">Tradicional</span></td><td class="num">1</td><td class="num">21</td></tr>
+                <tr><td>Euro</td><td><span class="pill accent">Moderno</span></td><td class="num">5</td><td class="num">14</td></tr>
+                <tr><td>Total</td><td></td><td class="num">179</td><td class="num">2.306</td></tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- 03 -->
+    <div class="section-hero"><div class="num">03</div><h2 class="section-title">Premios <em>redimidos</em></h2></div>
+    <p class="section-sub">Material de impulso que ya llegó a manos del consumidor en punto de venta durante las cuatro rutas. <strong>Se muestra únicamente lo redimido</strong> — no material recibido ni saldos de inventario. El FS4 sigue en ejecución, así que estas cifras todavía van a crecer.</p>
+
+    <div class="kpi-row">
+        <div class="kpi-card"><div class="k-ico"><i class="fa-solid fa-cart-shopping"></i></div><div class="k-lbl">Unidades vendidas</div><h3>2.306</h3><div class="k-note">Venta al consumidor final en las 179 visitas acumuladas.</div></div>
+        <div class="kpi-card pos"><div class="k-ico"><i class="fa-solid fa-handshake"></i></div><div class="k-lbl">Premios redimidos</div><h3>1.029<small> uds.</small></h3><div class="k-note">Entregados al consumidor entre el 4 y el 27 de septiembre. El FS4 aporta 278, todavía en curso.</div></div>
+        <div class="kpi-card"><div class="k-ico"><i class="fa-solid fa-scale-balanced"></i></div><div class="k-lbl">Premios por unidad vendida</div><h3>0.45</h3><div class="k-note">Casi un premio entregado por cada dos unidades vendidas; ratio estable frente al 0.43 del FS3.</div></div>
+        <div class="kpi-card"><div class="k-ico"><i class="fa-solid fa-scissors"></i></div><div class="k-lbl">Más redimido</div><h3>Scrunchi</h3><div class="k-note">375 unidades · 36.4% de todo lo redimido. El cepillo es la referencia que más crece en el FS4 (67 uds. en apenas dos días y medio).</div></div>
+    </div>
+
+    <div class="chart-box">
+        <div class="cb-head"><h3>Ventas realizadas vs. premios entregados</h3><div class="cb-tag">Fig. 08</div></div>
+        <p class="cb-sub">El material de impulso va al ritmo de la venta: 2.306 unidades vendidas y 1.029 premios entregados en el acumulado de las cuatro rutas.</p>
+        <div class="chart-container"><canvas id="chartVentasPremios"></canvas></div>
+    </div>
+
+    <div class="chart-box">
+        <div class="cb-head"><h3>Premios redimidos por referencia</h3><div class="cb-tag">Fig. 09</div></div>
+        <p class="cb-sub">Unidades entregadas al consumidor por cada referencia del kit de impulso GLISS.</p>
+        <div class="chart-container"><canvas id="chartPremiosRedimidos"></canvas></div>
+    </div>
+
+    <div class="table-container full" style="margin-bottom:26px;">
+        <h3>Detalle por referencia</h3>
+        <p class="tbl-sub">Las cuatro referencias del kit de impulso GLISS, con el código de artículo Henkel con el que se legalizan. El scrunchi sigue liderando, pero el cepillo es la referencia que más está creciendo en el FS4.</p>
+        <table class="table-data">
+            <tr><th>Código</th><th>Referencia</th><th class="num">FS1-FS3</th><th class="num">FS4 <small>(parcial)</small></th><th class="num">Acumulado</th><th class="num">% del mix</th></tr>
+            <tr><td>HNK000909</td><td>Scrunchi en bolsa celofán GLISS 2026</td><td class="num">297</td><td class="num">78</td><td class="num">375</td><td class="num">36.4%</td></tr>
+            <tr><td>HNK001051</td><td>Gorro con caja GLISS</td><td class="num">173</td><td class="num">68</td><td class="num">241</td><td class="num">23.4%</td></tr>
+            <tr><td>HNK000908</td><td>Funda con caja GLISS 2026</td><td class="num">175</td><td class="num">65</td><td class="num">240</td><td class="num">23.3%</td></tr>
+            <tr><td>HNK000907</td><td>Cepillo con caja GLISS 2026</td><td class="num">106</td><td class="num">67</td><td class="num">173</td><td class="num">16.8%</td></tr>
+            <tr><td>Total</td><td>4 referencias</td><td class="num">751</td><td class="num">278</td><td class="num">1.029</td><td class="num">100%</td></tr>
+        </table>
+    </div>
+
+    <!-- 04 -->
+    <div class="section-hero"><div class="num">04</div><h2 class="section-title">Voz del <em>consumidor</em></h2></div>
+    <p class="section-sub">952 consumidores encuestados en las 179 visitas acumuladas — un promedio de 5.3 personas abordadas por visita, 197 de ellas en el FS4 (todavía en curso). Opinión promedio del producto: <strong>3.90 sobre 5</strong>, la mejor cifra la trae justamente el FS4 (3.99).</p>
+
+    <div class="chart-split">
+        <div class="chart-box" style="margin-bottom:0;">
+            <div class="cb-head"><h3>¿Conocía la marca?</h3><div class="cb-tag">Fig. 10</div></div>
+            <p class="cb-sub">Más de la mitad ya la conocía antes de esta visita — y esa proporción sube en el FS4 (58.4%).</p>
+            <div class="chart-container-sm"><canvas id="chartConoceMarca"></canvas></div>
+        </div>
+        <div class="chart-box" style="margin-bottom:0;">
+            <div class="cb-head"><h3>Uso actual de la marca</h3><div class="cb-tag">Fig. 11</div></div>
+            <p class="cb-sub">48% nunca la ha probado — el terreno de conversión más grande.</p>
+            <div class="chart-container-sm"><canvas id="chartUsoMarca"></canvas></div>
+        </div>
+    </div>
+
+    <div class="chart-split">
+        <div class="chart-box" style="margin-bottom:0;">
+            <div class="cb-head"><h3>¿Por dónde conoció la marca?</h3><div class="cb-tag">Fig. 12</div></div>
+            <p class="cb-sub">El propio punto de venta sigue siendo el canal más mencionado, aunque en el FS4 la TV toma la delantera puntualmente.</p>
+            <div class="chart-container-sm"><canvas id="chartCanales"></canvas></div>
+        </div>
+        <div class="chart-box" style="margin-bottom:0;">
+            <div class="cb-head"><h3>Percepción de la visita</h3><div class="cb-tag">Fig. 13</div></div>
+            <p class="cb-sub">78.5% se fue con una percepción positiva del punto — y en el FS4 sube a 86.3%, la mejor de las cuatro rutas.</p>
+            <div class="chart-container-sm"><canvas id="chartPercepcion"></canvas></div>
+        </div>
+    </div>
+
+    <div class="chart-split">
+        <div class="chart-box" style="margin-bottom:0;">
+            <div class="cb-head"><h3>Qué piden los consumidores</h3><div class="cb-tag">Fig. 14</div></div>
+            <p class="cb-sub">Promociones y precio, muy por encima de fragancia o empaque, en las cuatro rutas.</p>
+            <div class="chart-container-sm"><canvas id="chartAtributos"></canvas></div>
+        </div>
+        <div class="chart-box" style="margin-bottom:0;">
+            <div class="cb-head"><h3>Tipo de cabello reportado</h3><div class="cb-tag">Fig. 15</div></div>
+            <p class="cb-sub">Liso, ondulado y teñido concentran el 60% de las encuestas.</p>
+            <div class="chart-container-sm"><canvas id="chartTipoCabello"></canvas></div>
+        </div>
+    </div>
+
+    <div class="func-wrap" style="grid-template-columns:1fr;">
+        <div class="func-block">
+            <div class="func-head"><div class="func-ico"><i class="fa-solid fa-comments"></i></div><div><h3>Producto de interés y valoración</h3><div class="func-sub">Sobre las 952 encuestas acumuladas</div></div></div>
+            <div class="func-row"><span class="fr-lbl">Shampoo</span><span class="fr-val">390 (41.0%)</span></div>
+            <div class="func-row"><span class="fr-lbl">Tratamiento / Mascarilla</span><span class="fr-val">208 (21.9%)</span></div>
+            <div class="func-row"><span class="fr-lbl">Acondicionador</span><span class="fr-val">192 (20.2%)</span></div>
+            <div class="func-row"><span class="fr-lbl">Coloración</span><span class="fr-val">111 (11.7%)</span></div>
+            <div class="func-row"><span class="fr-lbl">Styling / Otro</span><span class="fr-val">48 (5.0%)</span></div>
+            <div class="func-note">Opinión promedio del producto: <strong>3.88 / 5</strong>. El interés sigue concentrado en el ritual básico (shampoo + acondicionador = 59.6%), lo que respalda seguir empujando el combo Ultimate Repair como producto ancla. En el FS3 el peso del shampoo sube todavía más (41.5%).</div>
+        </div>
+    </div>
+
+    <!-- 05 -->
+    <div class="section-hero"><div class="num">05</div><h2 class="section-title">Actividad de <em>la competencia</em></h2></div>
+    <p class="section-sub">128 de las 168 visitas que respondieron la pregunta (76.2%) reportaron actividad de marcas competidoras en el punto — 333 evidencias registradas en el acumulado, 76 de ellas en el FS4. La actividad reportada cae con fuerza en el FS4 frente a los tres cortes anteriores.</p>
+
+    <div class="kpi-row">
+        <div class="kpi-card"><div class="k-ico"><i class="fa-solid fa-triangle-exclamation"></i></div><div class="k-lbl">Visitas con competencia activa</div><h3>76.2<small>%</small></h3><div class="k-note">128 de 168 visitas que respondieron la pregunta. En el FS4: 51.4% — la caída más fuerte del acumulado.</div></div>
+        <div class="kpi-card"><div class="k-ico"><i class="fa-solid fa-tags"></i></div><div class="k-lbl">Evidencias registradas</div><h3>333</h3><div class="k-note">Con foto de respaldo en la mayoría de los casos. 76 evidencias nuevas en el FS4, muy concentradas en Jumbo Hayuelos.</div></div>
+        <div class="kpi-card"><div class="k-ico"><i class="fa-solid fa-percent"></i></div><div class="k-lbl">Táctica más usada</div><h3>Descuentos</h3><div class="k-note">250 de 325 evidencias con tipo registrado (76.9%) son descuento o promoción. El FS4 suma "pague 2 y lleve 3 o 4" en Jumbo y una activación fuerte de Head & Shoulders por lanzamiento de producto.</div></div>
+        <div class="kpi-card"><div class="k-ico"><i class="fa-solid fa-crown"></i></div><div class="k-lbl">Competidor más nombrado</div><h3>Pantene</h3><div class="k-note">80 menciones acumuladas, seguido de Elvive/L'Oréal (65) y Dove (44). Head & Shoulders entra con fuerza en el FS4 por el lanzamiento de un producto nuevo.</div></div>
+    </div>
+
+    <div class="chart-split">
+        <div class="chart-box" style="margin-bottom:0;">
+            <div class="cb-head"><h3>Marcas competidoras más mencionadas</h3><div class="cb-tag">Fig. 16</div></div>
+            <p class="cb-sub">Cada barra es el número de evidencias de campo en las que se identificó esa marca, en el acumulado de las cuatro rutas.</p>
+            <div class="chart-container-sm"><canvas id="chartMarcasCompetencia"></canvas></div>
+        </div>
+        <div class="chart-box" style="margin-bottom:0;">
+            <div class="cb-head"><h3>Tipo de actividad</h3><div class="cb-tag">Fig. 17</div></div>
+            <p class="cb-sub">Poco más de 3 de cada 4 acciones de la competencia son de precio.</p>
+            <div class="chart-container-sm"><canvas id="chartTiposActividad"></canvas></div>
+        </div>
+    </div>
+    <div class="table-container full" style="margin-bottom:26px;">
+        <h3>Qué pasó en el FS3: la semana promocional de Jumbo y Éxito</h3>
+        <p class="tbl-sub">El tercer fin de semana coincidió con una ventana de <strong>precios especiales y descuentos fuertes en las dos cadenas que más pesan en la ruta</strong>. Esto es lo que quedó registrado en campo — es el contexto que explica buena parte del salto de volumen del FS3 y también las diferencias de desempeño entre puntos de un día a otro.</p>
+        <table class="table-data no-total">
+            <tr><th>Cadena</th><th>Mecánica observada</th><th>Marcas involucradas</th><th>Lectura</th></tr>
+            <tr><td>Jumbo</td><td><span class="pill neg">2x1</span> en shampoo, sérum y línea capilar</td><td>Elvive, Pantene, Nutribella</td><td>La mecánica más agresiva del fin de semana. Donde hubo 2x1, el flujo de compradores se disparó; al día siguiente, en esos mismos corredores, la afluencia cayó de forma notoria.</td></tr>
+            <tr><td>Jumbo</td><td><span class="pill warn">Descuentos del 35% al 45%</span></td><td>Savital, Dove, Sedal</td><td>Presión directa sobre el precio de góndola en la categoría de cuidado capilar masivo.</td></tr>
+            <tr><td>Jumbo</td><td><span class="pill warn">Regalo por monto de compra</span> (perfume capilar por compras superiores a cierto monto)</td><td>Pantene, Head &amp; Shoulders, Herbal Essences</td><td>Compite con nuestro propio kit de impulso: el consumidor compara obsequio contra obsequio en el mismo pasillo.</td></tr>
+            <tr><td>Éxito</td><td><span class="pill warn">Precio especial + segunda unidad con descuento</span> (esquemas del tipo 30% / 70% en la segunda unidad)</td><td>Pantene, Elvive, Alma de Romero</td><td>Mecánica repetida en varios Éxito de Medellín y Bogotá. Empuja ticket y volumen de la competencia en el mismo día de nuestra visita.</td></tr>
+            <tr><td>Éxito</td><td><span class="pill neutral">Exhibición especial y mercaderista en punto</span></td><td>Pantene, Sedal, Savital, Dove, Herbal Essences, Tío Nacho, Muss</td><td>En puntos como Laureles Wow la competencia copó la exhibición con varias marcas a la vez.</td></tr>
+            <tr><td>Farmatodo</td><td><span class="pill warn">Días de mega descuento de la cadena</span> (30%, 35% y 40% en prácticamente toda la línea capilar)</td><td>L'Oréal, Herbal Essences, Alma de Romero, Tío Nacho</td><td>Cuando la cadena entera está en descuento, la línea sin promoción pierde visibilidad aunque la gestora esté en el punto.</td></tr>
+        </table>
+    </div>
+
+    <div class="table-container full" style="margin-bottom:26px;">
+        <h3>Qué pasó en el FS4: menos ruido general, pero un foco muy fuerte en dos puntos</h3>
+        <p class="tbl-sub">A diferencia del FS3, la actividad de competencia del FS4 <strong>no está repartida de forma pareja</strong>: casi una cuarta parte de todas las evidencias del fin de semana salió de un solo punto.</p>
+        <table class="table-data no-total">
+            <tr><th>Punto de venta</th><th>Mecánica observada</th><th>Marcas involucradas</th><th>Lectura</th></tr>
+            <tr><td>Jumbo Hayuelos</td><td><span class="pill neg">"Pague 2, lleve 3 o 4"</span> en toda la marca, más descuentos individuales</td><td>Pantene, Head &amp; Shoulders, Elvive, Dove, Savital, Garnier, Recamier, Kativa y más</td><td>17 evidencias en un solo punto — la concentración más alta de campaña. La cadena entera se volcó a esta mecánica ese sábado.</td></tr>
+            <tr><td>Jumbo Santa Ana</td><td><span class="pill warn">Lanzamiento de producto con impulsadora propia</span></td><td>Head &amp; Shoulders</td><td>Mayor visibilidad en lineal y fuera de lineal, con publicidad en todo el centro comercial. Explica que Head &amp; Shoulders entre por primera vez entre las marcas más nombradas del acumulado.</td></tr>
+            <tr><td>Caribe S.A. Terranova</td><td><span class="pill warn">Descuentos y 2x1 por rango de precio</span></td><td>Dove, Savital, Sedal, Head &amp; Shoulders</td><td>Punto nuevo de la ruta (Jamundí) que ya arrancó con presión de precio fuerte de la competencia.</td></tr>
+            <tr><td>Resto de la ruta</td><td><span class="pill neutral">Actividad puntual, sin patrón dominante</span></td><td>Variado</td><td>Fuera de Jumbo Hayuelos, la actividad de competencia reportada baja de forma notoria frente al FS3 — coincide con la caída de 79.5% a 51.4% en visitas con competencia activa.</td></tr>
+        </table>
+    </div>
+
+    <p class="section-sub" style="margin-top:-6px;"><i class="fa-solid fa-circle-info" style="color:var(--p-blue);margin-right:6px;"></i>Esto conecta directo con la sección 04: lo que más piden los consumidores es <strong>"promociones y combos"</strong> y <strong>"mejor precio"</strong> — justo la misma arma con la que ataca la competencia. Y conecta con la sección 06: la percepción del equipo en campo es que <strong>el fin de semana con descuento fue el de mejor venta</strong>, y que el día siguiente a una promoción fuerte del canal el punto se siente vacío. Un combo GLISS con precio visible en punto, sostenido y no puntual, es la respuesta más directa a los tres hallazgos.</p>
+
+    <!-- 06 -->
+    <div class="section-hero"><div class="num">06</div><h2 class="section-title">Percepción del <em>equipo en campo</em></h2></div>
+    <p class="section-sub">Esta sección recoge <strong>lo que percibió y reportó el equipo de gestoras a lo largo de la campaña, con énfasis en el fin de semana más reciente (FS4, todavía en curso)</strong>, en sus propias palabras y sin cifras: no son indicadores, son lecturas de quienes estuvieron paradas en el punto. Se incluyen aquí porque explican el <em>porqué</em> detrás de los números de las secciones anteriores y porque marcan decisiones que no se ven en una tabla.</p>
+
+    <div class="voz-wrap">
+        <div class="voz-card">
+            <div class="vz-tag">Lectura 01 · La palanca</div>
+            <h4>El descuento sí mueve la aguja</h4>
+            <p>La percepción más repetida del equipo es que <strong>esta fue la semana que se sintió con más venta</strong> de toda la campaña, y que los descuentos fueron realmente buenos: sirvieron para captar la atención del cliente y para cerrar la compra ahí mismo, en el punto.</p>
+            <p>No es una lectura aislada: aparece en gestoras de ciudades y canales distintos, y coincide con lo que el consumidor viene pidiendo en la encuesta.</p>
+        </div>
+        <div class="voz-card">
+            <div class="vz-tag">Lectura 02 · El efecto rebote</div>
+            <h4>El día después de la promoción, el punto queda vacío</h4>
+            <p>Varias gestoras describen el mismo fenómeno: el día de la promoción fuerte del canal <strong>hubo un flujo de personas altísimo y la venta respondió</strong>; al día siguiente, en ese mismo corredor, el comportamiento fue completamente distinto — el punto estuvo vacío durante toda la jornada, con muy poco flujo, y eso se reflejó directo en el cierre.</p>
+            <p>Es un efecto de calendario del canal, no de ejecución de la visita: el mismo punto, la misma gestora, resultados opuestos con un día de diferencia.</p>
+        </div>
+        <div class="voz-card">
+            <div class="vz-tag">Lectura 03 · La asimetría</div>
+            <h4>Cuando la competencia tiene promoción y nosotros no</h4>
+            <p>El reporte se repite en varios puntos: la competencia estaba con descuento o con 2x1 y <strong>nuestra línea no tenía ninguna mecánica ese día</strong>. La percepción del equipo es contundente: puestos a elegir en la misma góndola, el consumidor se va por el descuento.</p>
+            <p>El problema no es no tener promoción siempre; es <strong>no tenerla justo el día en que toda la categoría del punto está en promoción</strong>.</p>
+        </div>
+        <div class="voz-card">
+            <div class="vz-tag">Lectura 04 · La señal de fondo</div>
+            <h4>Puntos donde la afluencia es casi nula</h4>
+            <p>Hay puntos donde el bajo flujo <strong>no es del día, es estructural</strong>. Una gestora lo resume con una frase que vale más que cualquier indicador: lo ha reportado cada vez que ha sido posible, hasta el punto de darle pena insistir en que hay poca gente.</p>
+            <p>Cuando una alerta se repite fin de semana tras fin de semana, ya no es información nueva: es una decisión pendiente de cobertura.</p>
+        </div>
+        <div class="voz-card">
+            <div class="vz-tag">Lectura 05 · El arranque</div>
+            <h4>Quien empieza en el punto correcto, cierra desde el primer día</h4>
+            <p>Las gestoras que iniciaron campaña en este fin de semana reportan <strong>buen flujo de personas y cierre de venta desde su primera jornada</strong>. Es una buena señal sobre el modelo de abordaje y sobre el material de impulso: cuando el punto tiene tráfico, la curva de aprendizaje no frena la venta.</p>
+        </div>
+        <div class="voz-card">
+            <div class="vz-tag">Lectura 06 · La meta</div>
+            <h4>El mismo esfuerzo no rinde igual en todos los puntos</h4>
+            <p>El equipo percibe que <strong>el resultado individual depende mucho más del punto asignado y de la oferta que tenga ese día que del esfuerzo de la gestora</strong>. Hay quien siente que hizo su mejor semana y aun así no llegó a la meta, simplemente porque el punto no tenía tráfico o la línea no tenía mecánica.</p>
+            <p>Sugerencia derivada de esa percepción: que la meta se lea contra el <strong>potencial real del punto</strong> y no como un número plano igual para toda la ruta.</p>
+        </div>
+        <div class="voz-card">
+            <div class="vz-tag">Lectura 07 · El relevo</div>
+            <h4>Caras nuevas, mismo compromiso</h4>
+            <p>Este fue el fin de semana con <strong>más gestoras nuevas llegando a un punto por primera vez</strong> en toda la campaña. Aun así, el tono de los reportes de cierre de jornada no bajó: hay compromisos explícitos para el día siguiente — "continuar fortaleciendo el abordaje", "aprovechar cada oportunidad de contacto" — que suenan igual de comprometidos que los de quienes ya llevan toda la campaña en su puesto.</p>
+            <p>Es una señal a favor del proceso de inducción: el relevo no se sintió en la actitud registrada en campo.</p>
+        </div>
+        <div class="voz-card">
+            <div class="vz-tag">Lectura 08 · El agotado que vuelve</div>
+            <h4>Cuando la misma alerta de inventario se repite</h4>
+            <p>Un punto que ya había señalado quedarse sin línea Ultimate Repair vuelve a reportar, un corte después, que <strong>"quedan muy pocos productos"</strong>. Cuando la misma alerta aparece en el mismo punto dos fines de semana seguidos, deja de ser una anécdota de un día particular y empieza a ser una alerta de reposición que merece seguimiento aparte.</p>
+        </div>
+        <div class="voz-card">
+            <div class="vz-tag">Lectura 09 · El competidor que llegó con todo</div>
+            <h4>Un lanzamiento que se sintió en el punto</h4>
+            <p>En uno de los puntos, el equipo reportó el <strong>lanzamiento de un producto de la competencia respaldado con impulsadora propia y publicidad visible en todo el centro comercial</strong>, no solo en el lineal. Lo describen como el evento de competencia más fuerte que han visto en el punto, y coincide con que ese mismo competidor entra por primera vez entre los más nombrados del acumulado.</p>
+        </div>
+    </div>
+
+    <p class="section-sub" style="margin-top:-6px;"><i class="fa-solid fa-circle-info" style="color:var(--p-blue);margin-right:6px;"></i><strong>Nota de método:</strong> esta sección se construye únicamente con percepciones reportadas por el equipo en campo. Deliberadamente <strong>no incluye cifras</strong> — los números están en las secciones 00 a 05 — para no mezclar el dato con la lectura cualitativa ni exponer resultados individuales.</p>
+
+    <!-- 07 -->
+    <div class="section-hero"><div class="num">07</div><h2 class="section-title">Evidencia <em>fotográfica</em></h2></div>
+    <p class="section-sub">Registro fotográfico de la ejecución en punto de venta. Va rotando solo, o dale clic para pasar a la siguiente.</p>
+    <div class="carousel">
+        <div class="car-row">
+            <div class="car-side left" id="carSideLeft"><img id="carImgPrev" src="" alt="" referrerpolicy="no-referrer"></div>
+            <div class="car-stage" id="carStage">
+                <button class="car-nav prev" id="carPrev"><i class="fa-solid fa-chevron-left"></i></button>
+                <img id="carImg" src="" alt="" referrerpolicy="no-referrer">
+                <button class="car-nav next" id="carNext"><i class="fa-solid fa-chevron-right"></i></button>
+                <div class="car-counter" id="carCounter"></div>
+            </div>
+            <div class="car-side right" id="carSideRight"><img id="carImgNext" src="" alt="" referrerpolicy="no-referrer"></div>
+        </div>
+        <div class="car-caption"><div id="carPdv"></div><div id="carMeta"></div></div>
+    </div>
+
+    <!-- 08 -->
+    <div class="section-hero"><div class="num">08</div><h2 class="section-title">Lectura del corte y <em>recomendaciones</em></h2></div>
+    <p class="section-sub">Lo que este acumulado deja sobre la mesa y lo que proponemos hacer con ello, incluyendo lo que ya se movió en el FS4. Todo lo de abajo sale del cruce entre los registros de campo (secciones 00 a 05) y la percepción del equipo (sección 06).</p>
+
+    <div class="kpi-row">
+        <div class="kpi-card pos"><div class="k-ico"><i class="fa-solid fa-calendar-check"></i></div><div class="k-lbl">Insight 01</div><h3>La reposición funciona</h3><div class="k-note">6 de los 7 pendientes del FS3 se repusieron en la primera ventana disponible, incluida la primera visita en tres rutas a Droguería Las Villas de Colombia. Solo Jumbo Calle 80 sigue sin turno de reposición.</div></div>
+        <div class="kpi-card warn"><div class="k-ico"><i class="fa-solid fa-users-rotate"></i></div><div class="k-lbl">Insight 02</div><h3>El relevo más grande de la campaña</h3><div class="k-note">El FS4 trae 7 gestoras nuevas en el aplicativo — la mayor rotación de las cuatro rutas — y aun así la opinión del consumidor y la percepción del punto son las mejores del acumulado.</div></div>
+        <div class="kpi-card neg"><div class="k-ico"><i class="fa-solid fa-tag"></i></div><div class="k-lbl">Insight 03</div><h3>GLISS pierde peso en el FS4</h3><div class="k-note">La participación cae 9 puntos frente al FS3 (80.0% → 71.0%) y la unidades por visita bajan de 20.6 a 15.7. Hay que confirmar si es una tendencia real o un efecto del corte a mitad de domingo.</div></div>
+        <div class="kpi-card pos"><div class="k-ico"><i class="fa-solid fa-store"></i></div><div class="k-lbl">Insight 04</div><h3>El tradicional sigue rindiendo</h3><div class="k-note">3 puestos, cero faltantes en cuatro rutas y más del doble de unidades por visita que el moderno (23.1 vs. 10.7). El punto nuevo de Jamundí (Caribe S.A. Terranova) ya arrancó con buen volumen.</div></div>
+    </div>
+
+    <div class="strategy-box">
+        <div class="kick">Acciones propuestas</div>
+        <h3>Siete movimientos para el siguiente corte</h3>
+        <p class="sub">Priorizados por impacto sobre la venta y por facilidad de ejecución. La estructura de <strong>18 puestos de ruta</strong> se mantiene intacta en todas las propuestas: lo que se propone mover es <em>dónde</em> se paran esos 18 puestos, no cuántos son.</p>
+        <div class="strat-grid">
+            <div class="strat-item">
+                <h6><span class="st-ico"><i class="fa-solid fa-map-location-dot"></i></span>01 · Reevaluar la cobertura de los puntos de afluencia casi nula</h6>
+                <p>Se sugiere <strong>revisar la continuidad de algunos puntos de venta donde la afluencia es casi nula y donde se viene presentando una baja sostenida en la gestión</strong>. Los candidatos que salen del acumulado son la plaza de Chía (Droguería Salud Market Chía y Jumbo Chía, la ciudad de menor productividad por visita de toda la ruta), los tres Euro de Medellín, Éxito Chapinero y Éxito Calle 80, y Farmatodo CC Unicentro. En todos ellos el equipo lleva semanas reportando poco flujo y el rendimiento por visita está muy por debajo del promedio nacional.</p>
+            </div>
+            <div class="strat-item">
+                <h6><span class="st-ico"><i class="fa-solid fa-right-left"></i></span>02 · Reasignar esos turnos, no eliminarlos</h6>
+                <p>Los 18 puestos se mantienen. La propuesta es <strong>mover los turnos de bajo tráfico hacia los formatos que sí están respondiendo</strong>: el canal tradicional (Mercacentro, Mercamas, Surtifamiliar Alameda, Caribe Principal Jamundí y ahora Caribe S.A. Terranova abrieron con rendimientos muy por encima del promedio) y los Éxito y Jumbo de alto flujo (Envigado Wow, San Antonio, Santafé, Valle de Lili). Es el movimiento de mayor retorno inmediato del corte.</p>
+            </div>
+            <div class="strat-item">
+                <h6><span class="st-ico"><i class="fa-solid fa-calendar-xmark"></i></span>03 · Priorizar Jumbo Calle 80: dos fines de semana seguidos sin turno repuesto</h6>
+                <p>De los 7 pendientes del FS3, <strong>6 ya se repusieron en el FS4</strong> — Droguería Salud Market Chía, Jumbo Chía, Farmatodo Titán, Jumbo Santa Ana, Éxito Calle 80 y Éxito Unicentro Bogotá. <strong>Jumbo Calle 80 es el único que sigue sin turno de reposición</strong> desde el FS3; conviene agendarlo con prioridad en la primera ventana del próximo corte.</p>
+            </div>
+            <div class="strat-item">
+                <h6><span class="st-ico"><i class="fa-solid fa-tags"></i></span>04 · Vigilar la caída de participación GLISS en el FS4</h6>
+                <p>La participación GLISS bajó de 80.0% (FS3) a 71.0% (FS4, parcial) y las unidades por visita de 20.6 a 15.7. Antes de sacar conclusiones conviene <strong>esperar a que cierre el domingo</strong> — el corte de este informe fue a mitad de jornada —, pero si la tendencia se sostiene al cierre, vale la pena revisar si el mix se movió por disponibilidad de inventario o por el surtido propio de los puntos nuevos de esta ruta.</p>
+            </div>
+            <div class="strat-item">
+                <h6><span class="st-ico"><i class="fa-solid fa-graduation-cap"></i></span>05 · Estandarizar la inducción para el equipo nuevo</h6>
+                <p>El FS4 tuvo <strong>la rotación de personal más alta del acumulado</strong> (7 gestoras nuevas). La opinión del consumidor y la percepción del punto no se resintieron — de hecho fueron las mejores de las cuatro rutas —, lo que sugiere que el material de impulso y el guion de abordaje están funcionando incluso sin experiencia previa en el punto. Vale la pena documentar qué hizo que este relevo funcionara bien, para replicarlo la próxima vez que haya rotación.</p>
+            </div>
+            <div class="strat-item">
+                <h6><span class="st-ico"><i class="fa-solid fa-boxes-stacked"></i></span>06 · Asegurar inventario antes del fin de semana</h6>
+                <p>Éxito Laureles Wow reporta <strong>agotados de la línea Ultimate Repair por segundo corte consecutivo</strong>, y Farmatodo Centro Mayor ya había vendido casi todo su inventario en el FS3. Con el nivel de venta que está alcanzando la campaña, <strong>el surtido deja de ser un detalle operativo y pasa a ser el techo de la venta</strong>: conviene revisar reposición el jueves previo a cada ruta, empezando por estos dos puntos.</p>
+            </div>
+            <div class="strat-item">
+                <h6><span class="st-ico"><i class="fa-solid fa-handshake-angle"></i></span>07 · Responder a la entrada fuerte de Head &amp; Shoulders y a la mecánica de Jumbo Hayuelos</h6>
+                <p>El FS4 registró el <strong>lanzamiento de un producto de Head &amp; Shoulders con impulsadora propia</strong> en un punto de alto tráfico, y una promoción "pague 2, lleve 3 o 4" que copó Jumbo Hayuelos con más de diez marcas distintas. Vale la pena evaluar una respuesta puntual en esos dos puntos — visibilidad adicional o refuerzo de material de impulso — antes de que la mecánica se replique en otros Jumbo de la ruta.</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<footer class="foot">
+    <div class="foot-in">
+        <div class="foot-top">
+            <div><div class="foot-brand">HENKEL<span class="accent">·</span>GLISS</div><div class="foot-brand-sub">Ejecución en Punto de Venta · Fuerza Comercial Nacional</div></div>
+            <div class="foot-col"><h6>Cobertura</h6><p>11 ciudades activas: Bogotá, Medellín, Cali, Bucaramanga, Barranquilla, Manizales, Chía, Ibagué, Palmira, Dosquebradas y Jamundí.</p><p>179 visitas acumuladas: 139 sobre 149 turnos programados en los tres primeros fines de semana (93.3%), más 40 del FS4, todavía en ejecución. De los 7 pendientes del FS3, 6 ya se repusieron.</p></div>
+            <div class="foot-col"><h6>Metodología</h6><p>Captura en campo por visita: ingreso, ventas, premios, voz del consumidor, competencia y salida. La eficacia se cruza contra el cronograma de la ruta (MDF).</p><p>Los indicadores de cobertura se calculan sobre los PDVs y ciudades <em>activos entre el 4 y el 27 de septiembre</em>, no sobre la ruta completa del mes: una ciudad o un punto que no estaba programado en ninguno de los cuatro fines de semana no entra ni en el numerador ni en el denominador.</p><p>La ruta la ejecutan <strong>18 puestos de gestión</strong> (3 tradicional + 15 moderno). Esa cifra es fija: la rotación de personal cambia los nombres del aplicativo, no la estructura de la ruta.</p></div>
+            <div class="foot-col"><h6>Emisión</h6><p>Acumulado de cuatro fines de semana de ejecución. El FS4 está en curso al momento de este corte.</p><p>Periodo: 4 al 27 de septiembre 2026.</p><p>Documento interno · Henkel GLISS.</p></div>
+        </div>
+        <div class="foot-bottom">
+            <span>Henkel GLISS · Todos los derechos reservados</span>
+            <span>179 visitas · 61 PDVs activos · 11 ciudades · 18 puestos de ruta</span>
+            <span>Próxima emisión · Fin de semana siguiente</span>
+        </div>
+    </div>
+</footer>
+
+<script>
+Chart.register(ChartDataLabels);
+const RED='#E1000F', DEEP='#7a0000', DEEP2='#a30000', LIGHT='#ff5c5c', INK='#241c1c', GOLD='#a37b3a',
+    SLATE='#8a7a7b', SLATE2='#cdc0c1', POS='#0e7a5f', WARN='#a86a1a', NEG='#7a2020';
+const font = { family: 'Plus Jakarta Sans', weight: '600', size: 11 };
+const axisGrid = { grid: { color: '#f1e8e8', drawTicks: false }, ticks: { color: SLATE, font, padding: 8 }, border: { display: false } };
+const axisPlain = { grid: { display: false, drawTicks: false }, ticks: { color: SLATE, font, padding: 8 }, border: { display: false } };
+const donutPalette = [RED, INK, LIGHT, GOLD, DEEP2, SLATE, DEEP, SLATE2, '#c98a7a'];
+
+function donut(id, labels, data) {
+    new Chart(document.getElementById(id), {
+        type: 'doughnut',
+        data: { labels, datasets: [{ data, backgroundColor: donutPalette, borderColor: '#fff', borderWidth: 3 }] },
+        options: { maintainAspectRatio: false, responsive: true, cutout: '62%',
+            plugins: {
+                legend: { position: 'bottom', labels: { color: INK, font, boxWidth: 10, padding: 14 } },
+                datalabels: { color: '#fff', font: { family: 'Plus Jakarta Sans', weight: '800', size: 11 },
+                    formatter: (v, ctx) => { const total = ctx.chart.data.datasets[0].data.reduce((a,b)=>a+b,0); const pct = total? (v/total*100):0; return pct>=6 ? pct.toFixed(0)+'%' : ''; } }
+            } }
+    });
+}
+function barH(id, labels, data, color) {
+    new Chart(document.getElementById(id), {
+        type: 'bar',
+        data: { labels, datasets: [{ data, backgroundColor: color || RED, borderRadius: 3, barPercentage: 0.65 }] },
+        options: { indexAxis: 'y', maintainAspectRatio: false, responsive: true,
+            plugins: { legend: { display: false }, datalabels: { color: INK, font: { family: 'Plus Jakarta Sans', weight: '800', size: 11 }, anchor: 'end', align: 'end', offset: 6 } },
+            scales: { x: { ...axisGrid, beginAtZero: true }, y: axisPlain } }
+    });
+}
+
+function colPct(v) { return v >= 95 ? POS : (v >= 80 ? WARN : NEG); }
+function fmtPct(v) { return (v % 1 === 0) ? String(v) : v.toFixed(1); }
+
+new Chart(document.getElementById('chartCompVentas'), {
+    type: 'bar',
+    data: { labels: ['Día 1 (vie)','Día 2 (sáb)'],
+        datasets: [
+            { label: 'FS1 · 4-6 sep', data: [77,131], backgroundColor: SLATE2, borderRadius: 3, barPercentage: 0.8 },
+            { label: 'FS2 · 11-13 sep', data: [110,174], backgroundColor: SLATE, borderRadius: 3, barPercentage: 0.8 },
+            { label: 'FS3 · 18-20 sep', data: [225,445], backgroundColor: DEEP2, borderRadius: 3, barPercentage: 0.8 },
+            { label: 'FS4 · 25-27 sep (parcial)', data: [291,291], backgroundColor: RED, borderRadius: 3, barPercentage: 0.8 }
+        ] },
+    options: { maintainAspectRatio: false, responsive: true,
+        plugins: { legend: { position: 'bottom', labels: { color: INK, font, boxWidth: 10, padding: 14 } },
+            datalabels: { color: INK, font: { family: 'Plus Jakarta Sans', weight: '800', size: 11 }, anchor: 'end', align: 'end', offset: 4 } },
+        scales: { y: { ...axisGrid, beginAtZero: true }, x: axisPlain } }
+});
+
+new Chart(document.getElementById('chartCompIndicadores'), {
+    type: 'bar',
+    data: { labels: ['Cobertura','Tasa de cierre','Participación GLISS','Competencia activa'],
+        datasets: [
+            { label: 'FS1 · 4-6 sep', data: [94.4,98.0,91.0,83.7], backgroundColor: SLATE2, borderRadius: 3, barPercentage: 0.8 },
+            { label: 'FS2 · 11-13 sep', data: [100,97.4,75.4,86.8], backgroundColor: SLATE, borderRadius: 3, barPercentage: 0.8 },
+            { label: 'FS3 · 18-20 sep', data: [87.5,98.0,80.0,79.5], backgroundColor: DEEP2, borderRadius: 3, barPercentage: 0.8 },
+            { label: 'FS4 · 25-27 sep (parcial)', data: [null,95.0,71.0,51.4], backgroundColor: RED, borderRadius: 3, barPercentage: 0.8 }
+        ] },
+    options: { indexAxis: 'y', maintainAspectRatio: false, responsive: true,
+        plugins: { legend: { position: 'bottom', labels: { color: INK, font, boxWidth: 10, padding: 14 } },
+            datalabels: { color: INK, font: { family: 'Plus Jakarta Sans', weight: '800', size: 10 }, anchor: 'end', align: 'end', offset: 4, formatter: (v) => v + '%' } },
+        scales: { x: { ...axisGrid, beginAtZero: true, max: 110 }, y: axisPlain } }
+});
+
+new Chart(document.getElementById('chartCobDiaCanal'), {
+    type: 'bar',
+    data: { labels: ['Canal tradicional (3 puestos)','Canal moderno (15 puestos)'],
+        datasets: [
+            { label: 'A tiempo', data: [25,107], backgroundColor: GOLD, borderRadius: 3, barPercentage: 0.5, stack: 's' },
+            { label: 'Recuperada el domingo (FS2)', data: [0,7], backgroundColor: DEEP2, borderRadius: 3, barPercentage: 0.5, stack: 's' },
+            { label: 'Sin cubrir / pendiente', data: [0,10], backgroundColor: RED, borderRadius: 3, barPercentage: 0.5, stack: 's' }
+        ] },
+    options: { maintainAspectRatio: false, responsive: true,
+        plugins: { legend: { position: 'bottom', labels: { color: INK, font, boxWidth: 10, padding: 14 } },
+            datalabels: { color: 'white', font: { family: 'Plus Jakarta Sans', weight: '800', size: 12 }, anchor: 'center', align: 'center', formatter: (v) => v > 0 ? v : '' } },
+        scales: { y: { ...axisGrid, beginAtZero: true, stacked: true, ticks: { ...axisGrid.ticks, stepSize: 10 } }, x: { ...axisPlain, stacked: true } } }
+});
+
+new Chart(document.getElementById('chartCadencia'), {
+    type: 'bar',
+    data: { labels: ['Vie 04','Sáb 05','Dom 06','Vie 11','Sáb 12','Dom 13','Vie 18','Sáb 19','Dom 20','Vie 25','Sáb 26','Dom 27'], datasets: [{ data: [16,17,18,16,16,7,17,16,16,18,17,5], backgroundColor: [SLATE2,SLATE2,SLATE2,SLATE,SLATE,LIGHT,DEEP2,DEEP2,DEEP2,RED,RED,GOLD], borderRadius: 3, barPercentage: 0.6, categoryPercentage: 0.75 }] },
+    options: { maintainAspectRatio: false, responsive: true,
+        plugins: { legend: { display: false }, datalabels: { color: INK, font: { family: 'Plus Jakarta Sans', weight: '800', size: 13 }, anchor: 'end', align: 'end', offset: 4 } },
+        scales: { y: { ...axisGrid, beginAtZero: true, ticks: { ...axisGrid.ticks, stepSize: 5 } }, x: axisPlain } }
+});
+
+barH('chartCobCiudad',
+    ['Bogotá','Medellín','Cali','Ibagué','Barranquilla','Bucaramanga','Chía','Manizales','Palmira','Jamundí','Dosquebradas'],
+    [67,43,14,11,10,10,8,8,4,2,2]);
+
+barH('chartCobCadena',
+    ['Éxito','Jumbo','Farmatodo','Mercaldas','Cañaveral','Mercacentro','Surtiplaza','Euro','Droguerías','Mercamas','Caribe','La Montaña','Surtifamiliar'],
+    [75,43,20,8,6,6,5,5,5,2,2,1,1]);
+
+new Chart(document.getElementById('chartUnidadesDia'), {
+    type: 'line',
+    data: { labels: ['Vie 04','Sáb 05','Dom 06','Vie 11','Sáb 12','Dom 13','Vie 18','Sáb 19','Dom 20','Vie 25','Sáb 26','Dom 27'], datasets: [{ data: [77,131,124,110,174,54,225,445,338,291,291,46], borderColor: RED, backgroundColor: 'rgba(225,0,15,0.10)', fill: true, tension: 0.3, pointBackgroundColor: RED, pointRadius: 5, borderWidth: 3 }] },
+    options: { maintainAspectRatio: false, responsive: true,
+        plugins: { legend: { display: false }, datalabels: { color: INK, font: { family: 'Plus Jakarta Sans', weight: '800', size: 12 }, align: 'top', offset: 8 } },
+        scales: { y: { ...axisGrid, beginAtZero: true }, x: axisPlain } }
+});
+
+donut('chartMarcaReal', ['GLISS','Palette','Konzil','Balance','Igora','Oxigentas','Persil','Xtreme','M.A.S','Moco de Gorila','Brillance'], [1809,136,103,100,53,34,31,18,14,5,3]);
+
+barH('chartTopProductos', [
+  'Shampoo+Acond. Ultimate Repair (combo)','GLISS SHP Oil Nutritive 400ml','GLISS Óleo Oil Elixir 75ml -25',
+  'GLISS ACO Ultimate Repair 200ml','GLISS ACO 200ml Oil Nutritive -25','GLISS TRT Oil Nutritive Mask 400ml -25',
+  'GLISS SHP Ultimate Repair 400ml','GLISS TRT Ultra Repair Mask 400ml -25','GLISS SHP FullHairWonder 400ml -25',
+  'GLISS ACO Express 200ml UltRepair -25'
+], [281,222,195,165,159,156,149,143,142,116]);
+
+new Chart(document.getElementById('chartVentasPremios'), {
+    type: 'bar',
+    data: { labels: ['Unidades vendidas','Premios entregados'], datasets: [{ data: [2306,1029], backgroundColor: [DEEP, RED], borderRadius: 3, barPercentage: 0.4, categoryPercentage: 0.6 }] },
+    options: { maintainAspectRatio: false, responsive: true,
+        plugins: { legend: { display: false }, datalabels: { color: 'white', font: { family: 'Plus Jakarta Sans', weight: '800', size: 16 }, anchor: 'center', align: 'center' } },
+        scales: { y: { ...axisGrid, beginAtZero: true }, x: axisPlain } }
+});
+
+barH('chartPremiosRedimidos',
+    ['Scrunchi en bolsa celofán GLISS','Gorro con caja GLISS','Funda con caja GLISS','Cepillo con caja GLISS'],
+    [375,241,240,173]);
+
+donut('chartConoceMarca', ['Sí la conocía','No la conocía'], [519,429]);
+donut('chartUsoMarca', ['Nunca la ha probado','La usa actualmente','La ha probado antes'], [459,280,210]);
+barH('chartCanales', ['Punto de venta','TV','Redes sociales','Recomendación','Revistas','Otro','Radio'], [179,177,139,133,23,12,11]);
+donut('chartPercepcion', ['Le gustó','Le encantó','Ni fu ni fa','No le gustó'], [444,303,171,30]);
+barH('chartAtributos', ['Promociones y combos','Mejor precio','Mejor resultado','Mejor fragancia','Mayor disponibilidad','Empaque/presentación'], [266,244,202,159,152,102]);
+barH('chartTipoCabello', ['Liso','Ondulado','Teñido/Con color','Graso','Rizado','Dañado','Seco','Afro'], [265,162,142,91,90,84,79,35], LIGHT);
+
+barH('chartMarcasCompetencia', ['Pantene',"Elvive / L'Oréal",'Dove','Herbal Essences','Savital','Head & Shoulders','Sedal','Recamier'], [80,65,44,28,21,20,19,10]);
+donut('chartTiposActividad', ['Descuento/Promoción','Exhibición especial','Mercaderista en el punto','Degustación/Impulso'], [250,48,18,7]);
+
+const GALERIA = [
+  {"pdv": "Ejecución GLISS en punto de venta", "ciudad": "", "asesor": "", "fecha": "Fin de semana 3 · 18 al 20 de septiembre 2026", "url": "https://lh3.googleusercontent.com/d/1Xa1QagWs18eq6RyqHGATQxpXmJ9SUHwV=w1600"},
+  {"pdv": "Ejecución GLISS en punto de venta", "ciudad": "", "asesor": "", "fecha": "Fin de semana 3 · 18 al 20 de septiembre 2026", "url": "https://lh3.googleusercontent.com/d/1ovncsfua_G9KIKKYzzetMNjv1P2QJpy5=w1600"},
+  {"pdv": "Ejecución GLISS en punto de venta", "ciudad": "", "asesor": "", "fecha": "Fin de semana 3 · 18 al 20 de septiembre 2026", "url": "https://lh3.googleusercontent.com/d/16zymG_Krrh4IQ8iKWmhtZZmLa7Kkha3E=w1600"},
+  {"pdv": "Ejecución GLISS en punto de venta", "ciudad": "", "asesor": "", "fecha": "Fin de semana 3 · 18 al 20 de septiembre 2026", "url": "https://lh3.googleusercontent.com/d/131i4IxRfSQNgdEqP7sDNOdhhNIU479tz=w1600"},
+  {"pdv": "Ejecución GLISS en punto de venta", "ciudad": "", "asesor": "", "fecha": "Fin de semana 3 · 18 al 20 de septiembre 2026", "url": "https://lh3.googleusercontent.com/d/1uFCjb6dcLf5r4QRJwZ0accwXwVcJClj6=w1600"},
+  {"pdv": "Ejecución GLISS en punto de venta", "ciudad": "", "asesor": "", "fecha": "Fin de semana 3 · 18 al 20 de septiembre 2026", "url": "https://lh3.googleusercontent.com/d/1vOyL8-_6s_8yqd3g2nXSNQImdalx69bU=w1600"},
+  {"pdv": "Ejecución GLISS en punto de venta", "ciudad": "", "asesor": "", "fecha": "Fin de semana 3 · 18 al 20 de septiembre 2026", "url": "https://lh3.googleusercontent.com/d/1hsNPv-Orn98b675BIWSTVjJa5jc_YqyF=w1600"},
+  {"pdv": "Ejecución GLISS en punto de venta", "ciudad": "", "asesor": "", "fecha": "Fin de semana 3 · 18 al 20 de septiembre 2026", "url": "https://lh3.googleusercontent.com/d/18575Z1o3xErMdDjedXTfnTr3Wn4Hgy-6=w1600"},
+  {"pdv": "Ejecución GLISS en punto de venta", "ciudad": "", "asesor": "", "fecha": "Fin de semana 3 · 18 al 20 de septiembre 2026", "url": "https://lh3.googleusercontent.com/d/1BEv4f4f8yws8gZYb1RFTzfn3nSw1i_7D=w1600"},
+  {"pdv": "Ejecución GLISS en punto de venta", "ciudad": "", "asesor": "", "fecha": "Fin de semana 3 · 18 al 20 de septiembre 2026", "url": "https://lh3.googleusercontent.com/d/1O8x5VfWCeyqvWU2hcEsRMvn8jfqcQgkC=w1600"},
+  {"pdv": "Ejecución GLISS en punto de venta", "ciudad": "", "asesor": "", "fecha": "Fin de semana 3 · 18 al 20 de septiembre 2026", "url": "https://lh3.googleusercontent.com/d/1DmtLXvv-O9XddLER3R95p2FMAjzDK1LK=w1600"},
+  {"pdv": "Ejecución GLISS en punto de venta", "ciudad": "", "asesor": "", "fecha": "Fin de semana 3 · 18 al 20 de septiembre 2026", "url": "https://lh3.googleusercontent.com/d/1qxFXNrvw_Ify1dkSrJwEkbXeJfjf-R4N=w1600"},
+  {"pdv": "Ejecución GLISS en punto de venta", "ciudad": "", "asesor": "", "fecha": "Fin de semana 3 · 18 al 20 de septiembre 2026", "url": "https://lh3.googleusercontent.com/d/1B2rdUBdmJIkDfu7qH5ZzLNO3XRLFUV-T=w1600"},
+  {"pdv": "Ejecución GLISS en punto de venta", "ciudad": "", "asesor": "", "fecha": "Fin de semana 3 · 18 al 20 de septiembre 2026", "url": "https://lh3.googleusercontent.com/d/1C0G3Tx1t7moQPVNNWTuT704dtya93_-o=w1600"},
+  {"pdv": "Ejecución GLISS en punto de venta", "ciudad": "", "asesor": "", "fecha": "Fin de semana 3 · 18 al 20 de septiembre 2026", "url": "https://lh3.googleusercontent.com/d/1-SjKLIpxd7_eRfqPsQ9BO4_fTW_b7i1C=w1600"},
+  {"pdv": "Ejecución GLISS en punto de venta", "ciudad": "", "asesor": "", "fecha": "Fin de semana 3 · 18 al 20 de septiembre 2026", "url": "https://lh3.googleusercontent.com/d/1NHm96S2kTBWZrpkDuPE-0u89Ns2cxz6i=w1600"},
+  {"pdv": "Ejecución GLISS en punto de venta", "ciudad": "", "asesor": "", "fecha": "Fin de semana 3 · 18 al 20 de septiembre 2026", "url": "https://lh3.googleusercontent.com/d/1vujO9KOaEbvfbM0cxzMPE3mE-2zr5otp=w1600"},
+  {"pdv": "Ejecución GLISS en punto de venta", "ciudad": "", "asesor": "", "fecha": "Fin de semana 3 · 18 al 20 de septiembre 2026", "url": "https://lh3.googleusercontent.com/d/1ExI7x70Or2b6CrvGWw4h_8gf1i2DeDaN=w1600"},
+  {"pdv": "Ejecución GLISS en punto de venta", "ciudad": "", "asesor": "", "fecha": "Fin de semana 3 · 18 al 20 de septiembre 2026", "url": "https://lh3.googleusercontent.com/d/1hq9jn7OXbwK-MxI_BgPTlJFwDShgpSPs=w1600"},
+  {"pdv": "Ejecución GLISS en punto de venta", "ciudad": "", "asesor": "", "fecha": "Fin de semana 3 · 18 al 20 de septiembre 2026", "url": "https://lh3.googleusercontent.com/d/1ASM5YupJlXVKk0mUlRGATYnquvcVaisv=w1600"},
+  {"pdv": "Ejecución GLISS en punto de venta", "ciudad": "", "asesor": "", "fecha": "Fin de semana 3 · 18 al 20 de septiembre 2026", "url": "https://lh3.googleusercontent.com/d/1tVvcs_UfwldzQj72NqfO3e9MfBK9o5M1=w1600"},
+  {"pdv": "Ejecución GLISS en punto de venta", "ciudad": "", "asesor": "", "fecha": "Fin de semana 3 · 18 al 20 de septiembre 2026", "url": "https://lh3.googleusercontent.com/d/1OhrR53C-GcDOkYqPiqjoHivbo4HxQPw4=w1600"},
+  {"pdv": "Ejecución GLISS en punto de venta", "ciudad": "", "asesor": "", "fecha": "Fin de semana 3 · 18 al 20 de septiembre 2026", "url": "https://lh3.googleusercontent.com/d/1ym6H4i5qPFsM7Wo3oaqLkk2x7yxFwn_Y=w1600"},
+  {"pdv": "Ejecución GLISS en punto de venta", "ciudad": "", "asesor": "", "fecha": "Fin de semana 3 · 18 al 20 de septiembre 2026", "url": "https://lh3.googleusercontent.com/d/1KWvEhEVc2ouH75cdOXZxQwastLT0rE5M=w1600"},
+  {"pdv": "Ejecución GLISS en punto de venta", "ciudad": "", "asesor": "", "fecha": "Fin de semana 3 · 18 al 20 de septiembre 2026", "url": "https://lh3.googleusercontent.com/d/1MlrPxu9VPcW5o-dhx4geiLLCpod5_sZn=w1600"},
+  {"pdv": "Ejecución GLISS en punto de venta", "ciudad": "", "asesor": "", "fecha": "Fin de semana 3 · 18 al 20 de septiembre 2026", "url": "https://lh3.googleusercontent.com/d/1S8izOMRhIs_Hc3vgB3M5OUJs0vZHr5r2=w1600"},
+  {"pdv": "Ejecución GLISS en punto de venta", "ciudad": "", "asesor": "", "fecha": "Fin de semana 3 · 18 al 20 de septiembre 2026", "url": "https://lh3.googleusercontent.com/d/1_0dm9X1pXtrRTXG-tRYL5i8tMhXYrSqs=w1600"},
+  {"pdv": "Ejecución GLISS en punto de venta", "ciudad": "", "asesor": "", "fecha": "Fin de semana 3 · 18 al 20 de septiembre 2026", "url": "https://lh3.googleusercontent.com/d/1RNZJ0VCYlIwaDWgBIrvJ9FI_cs_HHRhL=w1600"},
+  {"pdv": "Ejecución GLISS en punto de venta", "ciudad": "", "asesor": "", "fecha": "Fin de semana 3 · 18 al 20 de septiembre 2026", "url": "https://lh3.googleusercontent.com/d/1qptC7dLnuxcEa0stwGRfephwizUThu1d=w1600"},
+  {"pdv": "Ejecución GLISS en punto de venta", "ciudad": "", "asesor": "", "fecha": "Fin de semana 3 · 18 al 20 de septiembre 2026", "url": "https://lh3.googleusercontent.com/d/1AFo51Vxu9rVH7KexQl7PXnZ6Fg8Dp6Rp=w1600"}
+];
+
+let carIndex = 0;
+let carTimer = null;
+function mostrarCarrusel() {
+    const v = GALERIA[carIndex]; if (!v) return;
+    const prevV = GALERIA[(carIndex - 1 + GALERIA.length) % GALERIA.length];
+    const nextV = GALERIA[(carIndex + 1) % GALERIA.length];
+    const img = document.getElementById('carImg');
+    img.style.opacity = 0;
+    const pre = new Image();
+    pre.referrerPolicy = 'no-referrer';
+    pre.onload = function () { img.src = v.url; img.style.opacity = 1; };
+    pre.src = v.url;
+    document.getElementById('carImgPrev').src = prevV.url;
+    document.getElementById('carImgNext').src = nextV.url;
+    document.getElementById('carPdv').textContent = v.pdv;
+    document.getElementById('carMeta').textContent = [v.ciudad, v.asesor, v.fecha].filter(Boolean).join(' · ');
+    document.getElementById('carCounter').textContent = (carIndex + 1) + ' / ' + GALERIA.length;
+}
+function carSiguiente() { carIndex = (carIndex + 1) % GALERIA.length; mostrarCarrusel(); }
+function carAnterior() { carIndex = (carIndex - 1 + GALERIA.length) % GALERIA.length; mostrarCarrusel(); }
+function reiniciarAutoplay() { clearInterval(carTimer); carTimer = setInterval(carSiguiente, 4000); }
+document.getElementById('carNext').addEventListener('click', function (e) { e.stopPropagation(); carSiguiente(); reiniciarAutoplay(); });
+document.getElementById('carPrev').addEventListener('click', function (e) { e.stopPropagation(); carAnterior(); reiniciarAutoplay(); });
+document.getElementById('carStage').addEventListener('click', function (e) {
+    if (e.target.closest('.car-nav')) return;
+    carSiguiente(); reiniciarAutoplay();
+});
+document.getElementById('carSideLeft').addEventListener('click', function () { carAnterior(); reiniciarAutoplay(); });
+document.getElementById('carSideRight').addEventListener('click', function () { carSiguiente(); reiniciarAutoplay(); });
+mostrarCarrusel();
+reiniciarAutoplay();
+</script>
+
+</body>
+</html>
