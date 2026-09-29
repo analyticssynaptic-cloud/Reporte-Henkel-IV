@@ -678,7 +678,7 @@ new Chart(document.getElementById('chartCompVentas'), {
             { label: 'FS1 · 4-6 sep', data: [77,131], backgroundColor: SLATE2, borderRadius: 3, barPercentage: 0.8 },
             { label: 'FS2 · 11-13 sep', data: [110,174], backgroundColor: SLATE, borderRadius: 3, barPercentage: 0.8 },
             { label: 'FS3 · 18-20 sep', data: [225,445], backgroundColor: DEEP2, borderRadius: 3, barPercentage: 0.8 },
-            { label: 'FS4 · 25-27 sep', data: [291,291], backgroundColor: RED, borderRadius: 3, barPercentage: 0.8 }
+            { label: 'FS4 · 25-27 sep', data: [280,291], backgroundColor: RED, borderRadius: 3, barPercentage: 0.8 }
         ] },
     options: { maintainAspectRatio: false, responsive: true,
         plugins: { legend: { position: 'bottom', labels: { color: INK, font, boxWidth: 10, padding: 14 } },
@@ -719,7 +719,7 @@ barH('chartCobCadena',
 
 new Chart(document.getElementById('chartUnidadesDia'), {
     type: 'line',
-    data: { labels: ['Vie 04','Sáb 05','Dom 06','Vie 11','Sáb 12','Dom 13','Vie 18','Sáb 19','Dom 20','Vie 25','Sáb 26','Dom 27'], datasets: [{ data: [77,131,124,110,174,54,225,445,338,291,291,46], borderColor: RED, backgroundColor: 'rgba(225,0,15,0.10)', fill: true, tension: 0.3, pointBackgroundColor: RED, pointRadius: 5, borderWidth: 3 }] },
+    data: { labels: ['Vie 04','Sáb 05','Dom 06','Vie 11','Sáb 12','Dom 13','Vie 18','Sáb 19','Dom 20','Vie 25','Sáb 26','Dom 27'], datasets: [{ data: [77,131,124,110,174,54,225,445,338,280,291,57], borderColor: RED, backgroundColor: 'rgba(225,0,15,0.10)', fill: true, tension: 0.3, pointBackgroundColor: RED, pointRadius: 5, borderWidth: 3 }] },
     options: { maintainAspectRatio: false, responsive: true,
         plugins: { legend: { display: false }, datalabels: { color: INK, font: { family: 'Plus Jakarta Sans', weight: '800', size: 12 }, align: 'top', offset: 8 } },
         scales: { y: { ...axisGrid, beginAtZero: true }, x: axisPlain } }
